@@ -1,0 +1,163 @@
+page-business-purchase {
+    $browser-default-font-size: 16px !default;
+    @function pxTorem($px) {
+      @return $px / $browser-default-font-size * 1rem;
+      }
+      html {
+        font-size: $browser-default-font-size;
+      }
+
+
+
+/*
+      我的业务批量样式
+*/
+
+    .business *{
+        margin: 0;
+        padding: 0;
+    }
+    .business .list h3{
+      font-size: 1.5rem;
+      text-align: center;
+      padding: 1rem 1.6rem;
+      letter-spacing: .2rem;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .business .list h2{
+      font-size: 1.7rem;
+      padding: .6rem 1.6rem;
+      background-color: #e4f7ff;
+    }
+    .business .list .text{
+        padding: 1rem 1.6rem;
+        letter-spacing: .1rem;
+    }
+    .business .list .text p{
+        line-height: 2rem;
+    }
+    .col-span{
+        color: #666666 !important;
+    }
+    .col-i{
+        color: #ff7f00 !important;
+    }
+    .col-if{
+        color: #0099d9 !important;
+    }
+
+    .business .list-ios .item-block .item-inner{
+        border: 0;
+    }
+    .business .list .cont{
+        padding: 1rem 1.6rem;
+        letter-spacing: .2rem;
+        background-color: #e4f7ff;
+    }
+    .business .list .cont .flex1W100{
+        display: block;
+    }
+
+    .business .list-ios > .item-block:last-child, .list-ios > .item-wrapper:last-child .item-block{
+        border: 0;
+    }
+
+    .business .cent {
+        padding: 0 1rem;
+        margin-top: 1rem
+    }
+    .business .cent .item-inner {
+        background-color: #fafafa;
+        padding: 1.5rem 0;
+    }
+    .business .cent  .flexBox .flexLeftContent i{
+        font-size: 3rem;
+        color: #999999;
+        padding: 0 .5rem;
+    }
+    .business .cent .flex1W100{
+        display: block !important;
+    }
+    .business .cent .flex1W100 p{
+        display: -webkit-box;
+    }
+    .business .cent .flex1W100 p span{
+        // display: inline-block;
+        white-space: normal;
+        color: black;
+    }
+
+    .business .button-small-ios,.button-small-md{
+        padding: 0 .9rem;
+        margin-right: .5rem;
+    }
+
+    .mr-1{
+        margin-right: 1rem;
+    } 
+
+    .business .cent .flexBox .delete button{
+        background-color:#ff7f00; 
+    }
+    .business .cent .flex1W100 p  .color-te{
+      color:#fe572a;
+    }
+    .pad-left{
+        padding-left: .5rem !important;
+    }
+    .business .submit{
+        margin-top: 4rem;
+        padding: 0 3rem;
+    }
+
+/*
+    我的业务普通样式
+*/
+
+
+    .business .biaotou{
+        
+        margin: 0;
+        font-size: 1.6rem;
+        padding: 0;
+    }
+
+    .business .biaotou .biaoti-p{
+        padding: .6rem 1.6rem .6rem 1.6rem;
+        letter-spacing: .1rem;
+    }
+
+    .business .biaotou.list .cont{
+        background-color: #fff;
+    }
+    .next{
+        width: 80%;
+        margin: 2rem auto;
+    }
+    .business .biaotou .cont p{
+        padding: 0 1.6rem;
+        letter-spacing: .1rem;
+        font-size: 1.4rem;
+    }
+    .gray{
+        color: #666666;
+    }
+    .pad-9{
+        padding: .9rem 0 !important;
+    }
+    .bor-btm{
+        border-bottom: .05rem solid #f2f2f2;
+    }
+    .biaoti-p{
+        background-color: #e4f7fe;
+    }
+    .business .biaotou h2{
+        background-color: #fff;
+        text-align: center;
+        margin: 0;
+        font-size: 1.8rem;
+        padding: 1rem 0
+    }
+}

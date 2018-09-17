@@ -1,0 +1,59 @@
+<!--
+  Generated template for the ComplexQueryPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>楼盘查询</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="gray">
+  <ion-list class="row-2 bgfff">
+    <div class="flexBox">
+      <div class="flexLeftContent" no-lines>
+        <div>
+          <span class="fon-15 color-666">备案企业</span>
+        </div>
+      </div>
+      <div class="flex1W100 flexRightContent">
+        <ion-select class="max-width-100 width-100 fon-15 color-666 center" [(ngModel)]="selectVale" [placeholder]="defaultValue" multiple="false" cancelText="取消" okText="选择">
+          <ion-option *ngFor="let item of bankList">{{item.Value}}</ion-option>
+
+        </ion-select>
+      </div>
+    </div>
+    <div class="flexBox chaxun">
+      <div class="flexLeftContent flex1W100">
+        <ion-searchbar placeholder="" [(ngModel)]="searchStr">
+        </ion-searchbar>
+      </div>
+      <div class="flexRightContent">
+        <button ion-button small (click)="searchClick()">搜索</button>
+      </div>
+    </div>
+  </ion-list>
+  <ion-list class="row-2 switchever" *ngFor="let item of buildList" (click)="gofloorInformation(item.BDCUnitNo)">
+    <div class="flexBox">
+      <div class="flexLeftContent">
+        <i class="iconfont">&#xe61f;</i>
+      </div>
+      <div class="flex1W100">
+        <p class="fon-15">{{item.Location}}</p>
+        <p>点击进入楼层列表</p>
+      </div>
+    </div>
+  </ion-list>
+
+  <ion-infinite-scroll (ionInfinite)="doInfinite($event)" threshold="100px" [enabled]="FootisEnable" distance="5%"> 
+    <ion-infinite-scroll-content
+     loadingSpinner="bubbles"
+     loadingText="加载中..."> 
+     </ion-infinite-scroll-content> 
+ </ion-infinite-scroll>
+</ion-content>

@@ -1,0 +1,69 @@
+<ion-list>
+  <div class="list-div" (click)="addFamily()" *ngIf="queryFamily==0">
+    <p>+&nbsp;&nbsp;&nbsp;添加家庭成员(含本人)</p>
+  </div> 
+  <form [formGroup]="formData" test autocomplete="off" class="bgfff fromList">
+    <div formArrayName="data">
+      <ion-item *ngFor="let form of formData.controls.data.controls; let i=index;" [formGroupName]="i" class="border0">
+        <ion-item>
+          <ion-input type="text" [disabled]="query==0" limit-input [limit]=10 [fromCtrlName]="form.controls['userName']" placeholder="查询人姓名"
+            formControlName="userName"></ion-input>
+        </ion-item>
+        <!-- <verification *ngIf="formErrors.userName" [text]="formErrors.userName"></verification> -->
+        <ion-item>
+          <div class="flexBox">
+            <div class="flex1LeftContent">  
+              <!-- query判断是个人档。个人档的输入姓名和身份证是不允许修改。拿传入的值 -->
+              <input class="iteminput w100 border0 uppercase" type="text"  *ngIf="query==0" disabled limit-input [limit]=18 [fromCtrlName]="form.controls['personNo']"
+                uppercase=true placeholder="请输入身份证号码" formControlName="personNo" />
+
+              <input class="iteminput w100 border0 uppercase" type="text"  *ngIf="query==1" limit-input [limit]=18 [fromCtrlName]="form.controls['personNo']"
+              uppercase=true placeholder="请输入身份证号码" formControlName="personNo" />
+            </div>
+            <div class="flexContent" *ngIf="queryFamily==0">
+              <span class="span del" (click)="deleteFamilyPersonal(i)" *ngIf="i!=0">删除</span>
+              <span class="span add" (click)="familyPersonalQuery(i)" *ngIf="!form.value.auth">认证</span>
+            </div>
+          </div>
+        </ion-item>
+        <!-- <verification *ngIf="formErrors.personNo" [text]="formErrors.personNo"></verification> -->
+        <div formArrayName="arr">
+          <ion-item *ngFor="let arr of form.controls['arr'].controls; let a=index;" [formGroupName]="a">
+            <div class="flexBox">
+              <div class="flex1LeftContent">
+                <input class="iteminput w100 border0" type="text" placeholder="曾用名" formControlName="name" />
+              </div>
+              <div class="flexContent">
+                <i class="iconfont font22px" (click)="newForm(i,a)" *ngIf="!arr.value.isAdd">&#xe613;</i>
+                <i class="iconfont font22px" (click)="removeForm(i,a)" *ngIf="arr.value.isAdd">&#xe6b7;</i>
+              </div>
+            </div>
+          </ion-item>
+        </div>
+      </ion-item>
+    </div>
+    <!-- <ion-item class="border0">
+      <ion-input type="text" limit-input [limit]=10 [fromCtrlName]="formData.controls['userName']" placeholder="查询人姓名" formControlName="userName"></ion-input>
+    </ion-item>
+    <verification *ngIf="formErrors.userName" [text]="formErrors.userName"></verification>
+    <ion-item class="border0">
+      <ion-input type="text" limit-input [limit]=18 [fromCtrlName]="formData.controls['personNo']" uppercase=true class="uppercase"
+        placeholder="请输入身份证号码" formControlName="personNo"></ion-input>
+    </ion-item>
+    <verification *ngIf="formErrors.personNo" [text]="formErrors.personNo"></verification>
+
+    <div formArrayName="arr">
+      <ion-item *ngFor="let form of formData.controls['arr'].controls; let i=index;" [formGroupName]="i">
+        <div class="flexBox">
+          <div class="flex1">
+            <input class="iteminput w100 border0" type="text" placeholder="曾用名" formControlName="name" />
+          </div>
+          <div class="flexContent">
+            <i class="iconfont font22px" (click)="newForm(i)" *ngIf="!form.value.isAdd">&#xe613;</i>
+            <i class="iconfont font22px" (click)="removeForm(i)" *ngIf="form.value.isAdd">&#xe6b7;</i>
+          </div>
+        </div> 
+      </ion-item>
+    </div>    -->
+  </form>
+</ion-list>

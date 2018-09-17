@@ -1,0 +1,110 @@
+page-floor-information-editing {
+    $browser-default-font-size: 16px !default;
+    @function pxTorem($px) {
+      @return $px / $browser-default-font-size * 1rem;
+      }
+      html {
+        font-size: $browser-default-font-size;
+      }
+    .floor *{
+        margin: 0;
+        padding: 0;
+    }
+    .floor i{
+        display: block;
+    }
+    .floor h3{
+        font-size: 1.8rem;
+        margin: 0;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        text-align: center;
+        letter-spacing: .1rem;
+    }
+    .floor .searchbar-md .searchbar-search-icon, .searchbar-md .searchbar-md-cancel{
+        display: none;
+    }
+    .floor .searchbar-ios.searchbar-left-aligned .searchbar-search-icon{
+        display: none;
+    }
+    .floor  .searchbar-ios.searchbar-left-aligned{
+        height: auto !important;
+        min-height: 0;
+        padding-left: 1rem;
+        background: #fff;
+    }
+    .floor .searchbar-md .searchbar-input{
+        padding: 0;
+        background-color: #e4f7ff;
+        padding-left: 1rem;
+    }
+    .floor .searchbar-ios,.searchbar-md{
+        padding-left: 1rem;
+        padding-right: 1rem;
+        background: #fff;
+        border: 0;
+    }
+    .floor .searchbar-ios.searchbar-left-aligned .searchbar-input{
+        background-color: #e4f7ff;
+        padding-left: 1rem;
+    }
+    .floor .searchbar-ios .searchbar-input{
+        padding: 0;
+    }
+    // .floor input :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    // color: #f00; 
+    // }
+    
+    // .floor input::-moz-placeholder { /* Mozilla Firefox 19+ */
+    // color: #f00;
+    // }
+    
+    // .floor input:-ms-input-placeholder,
+    // textarea:-ms-input-placeholder {
+    // color: #f00;
+    // }
+    
+    // .floor input::-webkit-input-placeholder,
+    // textarea::-webkit-input-placeholder {
+    // color: #f00;
+    // }
+    .floor .list{
+        padding-top: 1.5rem;
+    }  
+    .floor .flexBox{
+        padding: .5rem 1rem 1rem 1rem;
+        border-bottom: 0.05rem solid #f2f2f2;
+    }
+    .flexBox .flexLeftContent.flex1W100 div{
+        display: inline-block;
+    }
+    .flexBox .flexLeftContent.flex1W100 div p{
+        display: inline-block;
+        letter-spacing: .2rem;
+    }
+    .floor .biao-1{
+        display: inline-block;
+        color: #ec8011;
+        letter-spacing: .2rem;
+        height: 100%;
+    }
+    .floor .biao-2{
+        color: #ec8011;
+        letter-spacing: .2rem;
+        height: 100%;
+    }
+    .floor .flexRightContent i{
+        font-size: 2rem;
+        text-align: center
+    }
+    .width-50{
+       width: 50% !important;
+    }
+    .floor .biao-2 .flexLeftContent{
+        display: inline-block;
+        color: #999;
+        letter-spacing: .2rem;
+        height: 100%;
+    }
+
+}

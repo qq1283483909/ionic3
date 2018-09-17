@@ -1,0 +1,9 @@
+beforename {
+    .fromList .item{
+        padding-right:16px;
+    }
+    .fromList .item:last-child .item-inner{
+        border-bottom: none;
+    } 
+    .fromList .border0 .item-inner{border:0}
+}

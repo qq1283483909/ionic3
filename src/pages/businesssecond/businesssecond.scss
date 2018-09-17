@@ -1,0 +1,35 @@
+page-businesssecond {
+
+    .mi-1{
+        width: 100%;
+         text-align: center;
+        font-weight:bold;
+        font-size: 1.8rem;
+    }
+
+    .bottsin{
+        padding-bottom: 10px;
+        font-size: 14px;
+        color: rgb(0,122,255);
+        text-decoration: none;
+        width: 101%;
+        padding-right: 54px;
+        overflow: visible;
+        white-space: normal;
+        text-overflow: ellipsis;
+        border: 1px solid red;
+        border-color: #ddd;
+        background-color: #fff;
+        z-index: 2;
+        display: block;
+        margin: -1px;
+        padding: 16px;
+        border-width: 1px;
+        border-style: solid;
+        vertical-align: baseline;
+        font: inherit;
+        box-sizing: border-box;
+        user-select: none;
+        text-emphasis: none;
+    }
+}

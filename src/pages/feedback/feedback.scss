@@ -1,0 +1,35 @@
+page-feedback {
+    $browser-default-font-size: 16px !default;
+    @function pxTorem($px) {
+      @return $px / $browser-default-font-size * 1rem;
+    }
+    html {
+      font-size: $browser-default-font-size;
+    }
+    .gray {
+      background-color: #f2f2f2;
+    }
+    textarea.text-input{
+        min-height: 7.5rem
+    }
+    .h4{
+        padding-bottom: .5rem
+    }
+    .em{
+        display: block;
+        margin: 0 auto;
+    }
+    .img-responsive{
+      height: auto;
+      display: block;
+      max-width: 100%;
+    
+    }
+    .button-bule{
+  
+      background-color: #0099d9;
+      color: #ffffff;
+  }
+  
+  }
+  

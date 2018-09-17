@@ -1,0 +1,66 @@
+<!--
+  Generated template for the PersonalfileOpenfilePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>在线办理预告类</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="gray">
+
+  <div class="center bc-blue1 htit">
+    <h2>{{ProjectName}}</h2>
+  </div>
+  <form [formGroup]="onlineForm" autocomplete="off">
+    <div class="labtit">
+      <label>{{title}}</label>
+    </div>
+    <div class="flexBox title" *ngIf='states.length > 0'>
+      <div class="flexLeftContent flex1">
+        <i class="iconfont back-i" block>&#xe790;</i>
+        <div>证书类型</div>
+      </div>
+      <div class="flexRightContent bdcselect">
+        <ion-item class="width-100" no-lines>
+          <ion-select formControlName="state" class="max-width-100 fon-14" cancelText="取消" okText="选择" [(ngModel)]="selectCerType">
+            <ion-option *ngFor="let subitem of states" [value]="subitem.Name">{{subitem.Name}}</ion-option>
+          </ion-select>
+        </ion-item>
+      </div>
+    </div>
+    <div *ngIf='states.length > 0'>
+    <app-two-way *ngIf="selectCerType == '不动产证明'" formControlName="username" [showzhenghao]="true" [showbianhao]="true" [showyear]="true"></app-two-way>
+    <yuzidian-check [selectType]="selectCerType" (onChange)="onChange($event)"></yuzidian-check>
+    </div>
+    <app-two-way formControlName="username"></app-two-way>
+    <ion-list class="obligee arrange-2">
+      <ion-item *ngIf="IsShowQuanliren != null">
+        <ion-label>{{IsShowQuanliren.titlelabel}}</ion-label>
+        <ion-input type="text" [placeholder]="IsShowQuanliren.placeholder"></ion-input>
+      </ion-item>
+    </ion-list>
+    <div class="flexBox title">
+      <div class="flexLeftContent flex1">
+        <i class="iconfont back-i">&#xe790;</i>
+        <span>{{pullListLabel}}</span>
+      </div>
+      <div class="flexRightContent bdcselect">
+        <ion-item class="width-100" no-lines>
+          <ion-select class="max-width-100 fon-14"  placeholder="下拉选择" cancelText='取消' okText='选择' formControlName='selectValue'>
+            <ion-option *ngFor="let item of PullList" [value]="item.Key">{{item.Value}}</ion-option>
+          </ion-select>
+        </ion-item>
+      </div>
+    </div>
+    <div padding>
+      <button ion-button full (click)="nextStep()">下一步</button>
+    </div>
+  </form>
+</ion-content>

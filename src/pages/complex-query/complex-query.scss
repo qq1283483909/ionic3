@@ -1,0 +1,102 @@
+page-complex-query {
+    $browser-default-font-size: 16px !default;
+    @function pxTorem($px) {
+      @return $px / $browser-default-font-size * 1rem;
+    }
+    html {
+      font-size: $browser-default-font-size;
+    }
+    .gray{
+        background-color: #F2F2F2;
+    }
+    .fon-15{
+        font-size: 1.5rem !important;
+    }
+    .color-666{
+        color: #666666;
+    }
+    .row-2{
+        padding: 0 2rem !important;
+    }
+
+    .max-width-100{
+        max-width: 100% !important;
+    }
+    .width-100{
+        width: 100% !important;
+    }
+    .center{
+        text-align: center !important;
+    }
+    .gray .list-ios{
+        margin: 0;
+    }
+    .gray .searchbar-ios{
+        padding: 0;
+        min-height: 0;
+        border-top: 0;
+        border-bottom: 0;
+        background: #e4f7ff;
+    }
+    .gray .chaxun {
+        padding-bottom: 2rem;
+    }
+    .gray .chaxun .flexRightContent{
+        padding-left: .5rem;
+    }
+    // .gray .chaxun .searchbar-ios .searchbar-input{
+    //     background: #e4f7ff;
+    //     height: 2.5rem !important ;
+    // }
+    .gray .chaxun .searchbar-ios.searchbar-left-aligned .searchbar-input{
+        height: 2.5rem !important ;
+        padding:  6px 35px;
+        background: #e4f7ff;
+    }
+    .gray .chaxun  .searchbar-md .searchbar-input{
+        height: 2.5rem !important ;
+        padding:  6px 35px;
+        background: #e4f7ff;
+    }
+    .gray .chaxun .searchbar-md .searchbar-search-icon{
+        top:6px;
+        left: 10px;
+    }
+    .gray .chaxun .searchbar-ios .searchbar-search-icon{
+        background-size: 15px;
+    }
+    .gray .switchever:nth-child(2n) {
+        background-color: #f7f7f7;
+    }
+    .gray .switchever:nth-child(2n+1) {
+        background-color: #ffffff;
+    }
+    .gray .switchever .flexBox{
+        padding: 1.5rem 0;
+    }
+    .gray .switchever .flexLeftContent{
+        display: block !important;
+        padding-right: 2rem
+    }
+    .gray .switchever .flexLeftContent i{
+        color: #24a7dd;
+        vertical-align: middle;
+    }
+    .gray .switchever .flex1W100 p{
+        margin: 0;
+    }
+    .gray .switchever .flex1W100 p:first-child{
+        color: #8a8a8a;
+    }
+    .gray .switchever .flex1W100 p:last-child{
+        color: #fe923f;
+        padding-top: .3rem;
+        font-size: 1rem;
+    }
+    .gray .item-cover{
+        width: auto;
+        height: auto;
+    }
+
+
+}

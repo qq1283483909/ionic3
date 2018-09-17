@@ -1,0 +1,58 @@
+<!--
+  Generated template for the FloorInformationEditingPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>楼盘查询</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="floor">
+  <h3>{{title}}</h3>
+  <div class="search">
+    <ion-searchbar placeholder="请输入您要搜索的房号" [(ngModel)]="searchStr" (keyup)="searchChange($event)"></ion-searchbar>
+  </div>
+  <ion-list>
+    <div class="flexBox" *ngFor="let item of buildList" (click)="goEditController(item)">
+      <div class="flexLeftContent flex1W100">
+        <div class="flex1W100">
+          <p>
+            <span>房号</span>
+            <span>：</span>
+            <span>{{item.RoomPart}}</span>
+          </p>
+        </div>
+        <div class="flex1W100">
+          <p class="width-50">
+            <span>面积</span>
+            <span>：</span>
+            <span>{{item.BDCArea}}</span>
+          </p>
+          <p>
+            <span>用途</span>
+            <span>：</span>{{item.RoomUsage}}
+          </p>
+        </div>
+      </div>
+      <div class="flexRightContent biao-1">
+        <i class="iconfont">&#xe632;</i>
+        <p>填写</p>
+      </div>
+      <!-- <div class="flexRightContent biao-2">
+        <div class="flexLeftContent">
+          <i class="iconfont">&#xe677;</i>
+          <p>房屋已抵押</p>
+        </div>
+        <div class="flexRightContent">
+            <i class="iconfont">&#xef02;</i>
+        </div>
+      </div> -->
+    </div>
+  </ion-list>
+</ion-content>

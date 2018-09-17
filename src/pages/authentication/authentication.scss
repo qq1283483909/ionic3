@@ -1,0 +1,119 @@
+page-authentication {
+    $browser-default-font-size: 16px !default;
+    @function pxTorem($px) {
+      @return $px / $browser-default-font-size * 1rem;
+    }
+    html {
+      font-size: $browser-default-font-size;
+    }
+    .font36 {
+      font-size: 3.6rem;
+    }
+    .font18 {
+      font-size: 1.8rem
+    }
+    .font26 {
+      font-size: 2.6rem
+    }
+    .font32 {
+      font-size: 3.20rem
+    }
+    .bc-red {
+      color: #ff5959
+    }
+  
+    .bc-blue {
+      color: #709ead;
+    }
+    .bc-green {
+      color: #36e2d4;
+    }
+    .bc-black {
+      color: #000;
+    }
+    .mt20 {
+      margin-top: 2rem;
+    }
+    .mb20 {
+      margin-bottom: 2rem;
+    }
+    .box-show-h {
+      box-shadow: -10px 0 10px #e1e1e1
+    }
+    .items_list li:last-child {
+      border-bottom: none;
+    }
+    .gray  .card-md{
+      width: 100%;
+      margin: 0;
+    }
+    .personal {
+      background-image: url("../assets/imgs/banner_p.png");
+      background-position: center center;
+      background-size: cover;
+      padding: 1.25rem 0;
+      width: 100%;
+    }
+    .personal .p {
+      color: #ffffff;
+      font-size: 1.4rem;
+      margin: 0 0 .1rem;
+      white-space: normal;
+    }
+    .personal .h2 {
+      color: #ffffff;
+      font-size: 1.8rem;
+      margin-top: 0.5rem;
+      margin-bottom: 1rem;
+      white-space: normal;
+    }
+  
+    .personal  .col.center {
+      display: box;
+      display: -webkit-box;
+      display: -moz-box;
+      -webkit-box-pack: center;
+      -moz-box-pack: center;
+      -webkit-box-align: center;
+      -moz-box-align: center;
+    }
+    .personal .col  {
+      display: block;
+    }
+    .personal .col-6 img {
+      margin: 0 auto;
+      width: 6.225rem;
+      height: 6.225rem;
+      -webkit-box-pack: center;
+    }
+    .personal .col-6 {
+      margin-left: 3rem;
+    }
+    .personal .item-inner{
+      margin-left: 2.8rem;
+      border-bottom: none !important;
+    }
+  
+    .personal_list .item {
+      padding: 1.125rem 4.6rem;
+    }
+    .personal_list .item font {
+      vertical-align: .5rem;
+      padding-left: 1.526rem;
+    }
+    .list button {
+      display: inline-block;
+      width: 100%;
+      border-bottom: .1rem #e5e5e5 solid;
+      text-decoration: none;
+      color: black;
+    }
+    
+    .list-md .item-block .item-inner{
+      border-bottom: none;  
+    }
+     button.item-ios:not([detail-none]) .item-inner{
+      background-image: none;
+      border: none;
+     }
+}

@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      相关资讯
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="gray">
+    <ion-refresher (ionRefresh)="doRefresh($event)"> 
+        <ion-refresher-content
+            pullingIcon="arrow-dropdown"
+            pullingText="下拉刷新"
+            refreshingSpinner="circles"
+            refreshingText="刷新..."> 
+        </ion-refresher-content>
+        <ion-refresher-content > 
+    </ion-refresher-content>
+    </ion-refresher>
+    <ion-card>
+        <img src="assets/imgs/banner.png" alt="">
+      </ion-card>
+      <div class="title">
+        <div>
+          <i class="iconfont">&#xe790;</i>
+          <span>相关资讯</span>
+        </div>
+      </div>
+      <div *ngFor="let item of newsList">
+          <newitem [item]="item"></newitem>
+          </div>
+
+          <ion-infinite-scroll (ionInfinite)="doInfinite($event)" threshold="200px" [enabled]="FootisEnable" distance="5%"> 
+              <ion-infinite-scroll-content
+               loadingSpinner="bubbles"
+               loadingText="加载中..."> 
+               </ion-infinite-scroll-content> 
+           </ion-infinite-scroll>
+</ion-content>

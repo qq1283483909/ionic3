@@ -1,0 +1,105 @@
+<!--
+  Generated template for the RightpersoninformationPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>{{title}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content>
+  <ion-list class="list-ios ">
+    <ion-item class="bos">
+      <ion-label class="tow">类型</ion-label>
+      <ion-select cancelText="取消" okText="确定">
+        <ion-option *ngFor="let gast of bow">{{gast.name}}</ion-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
+
+  <ion-list class="list-ios ">
+    <ion-item class="bos">
+      <ion-label>证件类型</ion-label>
+      <ion-select cancelText="取消" okText="确定">
+        <ion-option *ngFor="let Certificates of documenttype">{{Certificates.type}}</ion-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
+
+  <ion-list class="list-ios">
+    <ion-item>
+      <ion-label>共有方式</ion-label>
+      <ion-select cancelText="取消" okText="确定">
+        <ion-option *ngFor="let Share of gtr">{{Share.All}}</ion-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
+
+
+  <ion-list class="ti-1">
+
+    <!-- <ion-list list-ios-header-border-bottom='true'>
+      <ion-item>
+        <ion-label stacked class="bi-1">权利人名称</ion-label>
+        <ion-input  type="number" limit=7  value=""  placeholder="中文名称" [(ngModel)]="formErrors.Name"   class="si-1"></ion-input>
+      </ion-item>
+      <verification *ngIf="formErrors.Name" [text]="formErrors.Name"></verification>
+      <div class="bow">
+        <button ion-button [disabled]="!rightpersonformationForm.valid">保存</button>
+      </div>
+    </ion-list> -->
+
+
+
+
+
+
+    <!-- <ion-list list-ios-header-border-bottom='true'>
+        <ion-item>
+          <ion-label>桂</ion-label>
+          <ion-input type="number" limit=4 placeholder="请输入年份" value="" [(ngModel)]="open.no" ></ion-input>
+        </ion-item>
+  </ion-list>  -->
+
+
+
+
+
+    <form [formGroup]="rightpersonformationForm">
+      <ion-item>
+        <ion-label stacked class="bi-1">权利人名称</ion-label>
+        <ion-input type="text" placeholder="中文名称" formControlName="Name" maxlength="6" class="si-1"></ion-input>
+      </ion-item>
+      <verification *ngIf="formErrors.Name" [text]="formErrors.Name"></verification>
+      <ion-item>
+        <ion-label stacked class="bi-1">证件号码</ion-label>
+        <ion-input type="text" placeholder="请输入证件号码" formControlName="personno" maxlength="18" class="si-1"></ion-input>
+      </ion-item>
+      <verification *ngIf="formErrors.personno" [text]="formErrors.personno"></verification>
+      <ion-item>
+        <ion-label stacked class="bi-1">手机号码</ion-label>
+        <ion-input type="tel" placeholder="移动通讯号码" formControlName="phonenumber" maxlength="11" class="si-1"></ion-input>
+      </ion-item>
+      <verification *ngIf="formErrors.phonenumber" [text]="formErrors.phonenumber"></verification>
+      <ion-item>
+        <ion-label stacked class="bi-1">通讯地址</ion-label>
+        <ion-input type="text" placeholder="请输入真实有效的通讯地址" formControlName="communication" class="si-1"></ion-input>
+      </ion-item>
+      <verification *ngIf="formErrors.communication" [text]="formErrors.communication"></verification>
+      <div class="bow">
+        <button ion-button [disabled]="!rightpersonformationForm.valid">保存</button>
+      </div>
+
+    </form>
+
+
+  </ion-list>
+
+
+
+</ion-content>

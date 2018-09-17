@@ -1,0 +1,34 @@
+page-connection {
+    $browser-default-font-size: 16px !default;
+    @function pxTorem($px) {
+      @return $px / $browser-default-font-size * 1rem;
+    }
+    html {
+      font-size: $browser-default-font-size;
+    }
+    .gray>.scroll-content {
+      margin-top: 20px !important;
+    }
+    .gray .item-inner {
+      border-bottom: none !important;
+      text-align: center;
+    }
+    .gray ion-item:first-child img {
+      width: 100%;
+      height: 100%;
+    }
+    .gray .item-inner img {
+      width: 50%;
+      height: 50%;
+    }
+    .gray .item-inner p{
+      font-size: 2rem;
+    }
+    .gray .item-inner .mt-5 {
+      margin-top: 1rem;
+    }
+    .gray .pt-5 {
+      margin-top: -.3rem;
+    }
+  }
+  

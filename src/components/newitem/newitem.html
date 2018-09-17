@@ -1,0 +1,38 @@
+<!-- Generated template for the NewitemComponent component -->
+<ion-row class="width-100 bor-buttom">
+  <ion-col (click)="newsdetailVC()">
+    <div class="input-wrapper">
+      <ion-label class="label label-md text-left">
+        <font>
+          {{item.Title}}
+        </font>
+      </ion-label>
+    </div>
+
+
+    <ion-item *ngIf="!IsHome" class="center">
+      <ion-row class="row">
+        <ion-col class="col">
+          <img-lazy-load class="img-responsive" [src]="item.TitleImg || 'assets/imgs/newslogobig.jpg'"></img-lazy-load>
+          <!-- <img class="img-responsive" [src]="item.TitleImg || 'assets/imgs/newslogobig.jpg'"> -->
+        </ion-col>
+        <ion-col class="col">
+          <div>
+            <p>{{item.SubTile}}</p>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-item>
+
+    <ion-card *ngIf="IsHome" class="card">
+      <img-lazy-load [src]="item.TitleImg || 'assets/imgs/newslogobig.jpg'"></img-lazy-load>
+      <!-- <img-loader [src]="item.TitleImg || 'assets/imgs/newslogobig.jpg'" useImg></img-loader> -->
+      <!-- <img [src]="item.TitleImg || 'assets/imgs/newslogobig.jpg'"> -->
+      <ion-card-content class="card-content card-content-md text-left">
+        <p *ngIf="IsHome">
+          {{item.Type}}
+        </p>
+      </ion-card-content>
+    </ion-card>
+  </ion-col>
+</ion-row>

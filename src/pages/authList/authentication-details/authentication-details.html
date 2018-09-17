@@ -1,0 +1,40 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>我的授权</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <div *ngIf="info">
+
+
+    <ion-card *ngIf="info">
+      <ion-card-content>
+        <p>不动产单元号：{{info.BDCUnitNo}}</p>
+        <p>不动产权证号：{{info.BDCUnitPaerNo}}</p>
+        <p>权利类型：{{info.RightsType}}</p>
+        <p>登记类型：{{info.RegisteType}}</p>
+        <p>业务类型：{{info.MortgageType}}</p>
+        <p>申请方式：{{info.RegisterType}}</p>
+        <p>不动产坐落：{{info.BDCAddress}}</p>
+        <p>房屋面积：{{info.MortgageHouseArea}}</p>
+        <p>抵押合同编号：{{info.MortgageDealNo}}</p>
+        <p>债权金额(万元)：{{info.BorrowingAmount}}</p>
+        <p>抵押物价值(万元)：{{info.BDCValue}}</p>
+        <p>贷款类别：{{info.LoanType}}</p>
+        <p>担保范围：{{info.SuretyType}}</p>
+        <p>抵押合同签订日期：{{info.MortgageDealDate}}</p>
+        <p>债务起始日期：{{info.LoanStart}}</p>
+        <p>债务履行期限：{{info.LoanDays}}</p>
+        <p>权利人：{{detailsBox.qlrList}}</p>
+        <p>义务人：{{detailsBox.ywrList}}</p>
+      </ion-card-content>
+    </ion-card> 
+      <button ion-button block (click)="goAuth()" ng-if="authInfo.State===0">
+        认证
+      </button> 
+  </div>
+</ion-content>

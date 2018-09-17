@@ -1,0 +1,9 @@
+<ion-list *ngIf="selectType != '不动产证明' && selectType != ''" class="arrange-2">
+    <ion-item >
+        <ion-label fixed>号</ion-label>
+        <ion-input type="number" [(ngModel)]="inputNumber" (keyup)="onKeyup($event.target.value)"></ion-input>
+      </ion-item>
+      <ion-item>
+        <p class="font16">{{selectType}}<span class="bule">{{inputNumber}}</span>号</p>
+      </ion-item>
+</ion-list> 

@@ -1,0 +1,38 @@
+page-rightpersoninformation {
+   .bos{
+       border-bottom:0 !important;
+   }   
+ 
+   .list-ios{
+      margin: -1.5px 0 1px;
+   }
+
+   .tow{
+       font-size: 1.6rem;
+   }
+
+   .bi-1{
+       font-size: 1.6rem !important;
+   }
+
+   .si-1{
+       font-size: 1.4rem !important;
+   }
+
+   .bow{
+       text-align: center !important;
+   }
+
+   .row{
+       background-color: #387ef5;
+   }
+
+   .ti-1{
+       padding-top: 1.2rem;
+   }
+
+   .ti-1 input::-webkit-input-placeholder, textarea::-webkit-input-placeholder { 
+        color:red; 
+         } 
+
+}

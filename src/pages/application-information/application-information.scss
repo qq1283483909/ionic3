@@ -1,0 +1,51 @@
+page-application-information {
+    $browser-default-font-size: 16px !default;
+    @function pxTorem($px) {
+      @return $px / $browser-default-font-size * 1rem;
+      }
+      html {
+        font-size: $browser-default-font-size;
+      }
+    .box *{
+        margin: 0;
+        padding: 0;
+    }
+    .box h2{
+        text-align: center;
+        margin: 0;
+        font-size: 1.8rem;
+        padding: 1rem 0;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+    .box .biaoti.list{
+        margin: 0;
+        font-size: 1.6rem;
+        padding: 0;
+    }
+    .box .biaoti.list .biaoti-p{
+        padding: .6rem 1.6rem .6rem 1.6rem;
+        letter-spacing: .1rem;
+    }
+    .biaoti-p{
+        background-color: #e4f7fe;
+    }
+    .box .cont p{
+        padding: 0 1.6rem;
+        letter-spacing: .1rem;
+        font-size: 1.4rem;
+    }
+    .bor-btm{
+        border-bottom: .05rem solid #f2f2f2;
+    }
+    .pad-9{
+        padding: .9rem 0 !important;
+    }
+    .col-888{
+        color: #888888;
+    }
+    .box .list{
+        padding: 1.8rem 0;
+    }
+}

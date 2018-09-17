@@ -1,0 +1,98 @@
+page-real-estate-information {
+    $browser-default-font-size: 16px !default;
+    @function pxTorem($px) {
+      @return $px / $browser-default-font-size * 1rem;
+      }
+      html {
+        font-size: $browser-default-font-size;
+      }
+    .floor *{
+        margin: 0;
+        padding: 0;
+    }
+    .floor h2{
+        text-align: center;
+        margin: 0;
+        font-size: 1.8rem;
+        padding: .5rem 0
+    }
+    .floor .biaoti.list{
+        margin: 0;
+        font-size: 1.6rem;
+        background-color: #e4f7fe;
+        color: #1595d6;
+        padding: 0;
+    }
+    .floor .biaoti.list p{
+        padding: .6rem 1.6rem .6rem 1.6rem;
+        letter-spacing: .1rem;
+    }
+    .floor .list p{
+        padding: 0 1.6rem;
+        letter-spacing: .2rem;
+    }
+    .bor-btm{
+        border-bottom: .05rem solid #f2f2f2;
+    }
+    .pad-3{
+        padding-bottom: .3rem;
+    }
+    .pad-9{
+        padding: .9rem 0 !important;
+    }
+    .col-888{
+        color: #888888;
+    }
+    .floor .list{
+        padding: 1.8rem 0;
+    }
+    .justify .flexRightContent{
+        text-align: right;
+    }
+    // .justify input:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    //     text-align: right;
+    // }
+    
+    // .justify input::-moz-placeholder { /* Mozilla Firefox 19+ */
+    //     text-align: right;
+    // }
+    
+    // .justify input:-ms-input-placeholder,
+    // textarea:-ms-input-placeholder {
+    //     text-align: right;
+    // }
+    
+    // .justify input::-webkit-input-placeholder,
+    // textarea::-webkit-input-placeholder {
+    //     text-align: right;
+    // }
+    .justify input{
+        border: none;
+    }
+    .add{
+        color: #ff9d41;
+    }
+    .floor .biaoti .cont{
+        background-color: #fff;
+        padding: .5rem 1.6rem;
+    }
+    .floor .biaoti .cont .flexLeftContent{
+        display: block;
+    }
+    .floor .biaoti .cont .flexLeftContent p{
+        display: block;
+        max-width: 90%;
+        font-size: 1.4rem;
+        line-height: 1.8rem;
+        color: black;
+        letter-spacing: .1rem;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        padding: 0;
+    }
+    .submit{
+        width: 80%;
+        margin: 3rem auto;
+    }
+}

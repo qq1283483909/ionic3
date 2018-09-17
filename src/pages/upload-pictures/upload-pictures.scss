@@ -1,0 +1,39 @@
+page-upload-pictures {
+    $browser-default-font-size: 16px !default;
+    @function pxTorem($px) {
+      @return $px / $browser-default-font-size * 1rem;
+    }
+    html {
+      font-size: $browser-default-font-size;
+    }
+    .box *{
+        margin: 0;
+        padding: 0;
+    }
+    .box h2{
+        text-align: center;
+        margin: 0;
+        font-size: 1.5rem;
+        padding: 1rem 0
+    }
+    .box .biaoti{
+        padding: .6rem 2rem;
+        letter-spacing: .1rem;
+        background-color: #e4f7fe;
+        font-size: 1.4rem;
+        letter-spacing: .1rem;
+    }
+    .box .list{
+        margin: 3.5rem auto;
+        width: 60%;
+    }
+    .box .list div{
+        padding: 7rem 0;
+        color: #0099d9;
+        background-color: #f9f9f9;
+        text-align: center;
+    }
+    .box .list div i{
+        font-size: 3rem;
+    }
+}

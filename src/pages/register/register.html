@@ -1,0 +1,65 @@
+<!--
+  Generated template for the RegisterPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header class="header header-ios">
+
+  <ion-navbar class="toolbar toolbar-ios statusbar-padding">
+    <ion-title>注册</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <form [formGroup]="RegisterForm" (ngSubmit)="onRegister()" autocomplete="off">
+    <ion-item>
+      <ion-label fixed>姓 名</ion-label>
+      <ion-input type="text" placeholder="请输入中文姓名" formControlName="userName"></ion-input>
+    </ion-item>
+    <verification *ngIf="formErrors.userName" [text]="formErrors.userName"></verification>
+    <ion-item>
+      <ion-label fixed>身份证号</ion-label>
+      <ion-input type="text" placeholder="请输入身份证号码" formControlName="personNo"></ion-input>
+    </ion-item>
+    <verification *ngIf="formErrors.personNo" [text]="formErrors.personNo"></verification>
+    <ion-item>
+      <ion-label fixed>手 机 号</ion-label>
+      <ion-input type="tel" placeholder="请输入11位手机号码" formControlName="phoneNumber"></ion-input>
+    </ion-item>
+    <verification *ngIf="formErrors.phoneNumber" [text]="formErrors.phoneNumber"></verification>
+    <ion-item>
+      <ion-label fixed>密码</ion-label>
+      <ion-input type="password" placeholder="请输入至少6位密码" formControlName="password"></ion-input>
+    </ion-item>
+    <verification *ngIf="formErrors.password" [text]="formErrors.password"></verification>
+    <ion-item>
+      <ion-label fixed>确认密码</ion-label>
+      <ion-input type="password" placeholder="请再次输入密码" formControlName="confirmPassword"></ion-input>
+    </ion-item>
+    <verification *ngIf="formErrors.confirmPassword" [text]="formErrors.confirmPassword"></verification>
+    <ion-item>
+      <ion-label fixed>验证码</ion-label>
+      <ion-input type="text" placeholder="请输入验证码" formControlName="validCode"></ion-input>
+      <button color="custom" item-right ion-button class="button-bule" (click)="getCode()" [disabled]="(phoneNumberCtrl.invalid || !verifyCode.disable)">{{verifyCode.verifyCodeTips}}</button>
+    </ion-item>
+    <verification *ngIf="formErrors.validCode" [text]="formErrors.validCode"></verification>
+    <ion-list class="mt10 text-center">
+      <ion-checkbox color="danger" formControlName="ischeck" (click)="getProtocol()"></ion-checkbox>
+      <span class="va-m ml10 danger">我完全接受承诺书中的所有条款</span>
+    </ion-list>
+    <verification *ngIf="formErrors.ischeck" [text]="formErrors.ischeck"></verification>
+    <div>
+      <button ion-button block color="bule" [disabled]="!RegisterForm.valid">
+        注册
+      </button>
+    </div>
+    <div padding text-center>
+      <button ion-button color="primary" outline (click)="gotoLogin()">已有账号？登录</button>
+  </div>
+  </form>
+
+
+</ion-content>

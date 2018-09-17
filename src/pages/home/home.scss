@@ -1,0 +1,161 @@
+page-home {
+    $browser-default-font-size: 16px !default;
+    @function pxTorem($px) {
+      @return $px / $browser-default-font-size * 1rem;
+    }
+    html {
+      font-size: $browser-default-font-size;
+    }
+    .gray{
+        background-color: #f2f2f2;
+    }
+    .gray ion-card{
+        margin: 0;
+        width: 100%;
+    }
+    .gray .fon-5{
+       font-size: 5rem !important;
+       margin-top: .8rem;
+    }
+    .gray ion-item .row{
+        padding: .8rem 0 ;
+        text-align: center;
+    }
+    .gray .item-md.item-block .item-inner{
+        border-bottom: none;
+    }
+    .gray .item-ios.item-block .item-inner{
+        border-bottom: none;
+        padding: .5rem 0;
+    }
+    .gray ion-item .row i{
+        font-size: 4.5rem;
+    }
+    .iconfont.icon-1{
+        color: #000000;
+    }
+    .iconfont.icon-2{
+        color: #ffa200;
+    }
+    .iconfont.icon-3{   
+        color: #5bb4da;
+    }
+    .iconfont.icon-4{
+        color: #e07d22;
+    }
+    .iconfont.icon-5{
+        color: #66cccc;
+    }
+    .iconfont.icon-6{
+        color: #ac7603;
+    }
+    
+    .gray ion-item .row p{
+        font-size: 1.6rem;
+        color: #666666;
+        margin-top: .5rem;
+    }
+    .gray ion-list{
+        background-color: white;
+        margin: 0;
+        margin-top: 2rem;
+    }
+
+    .card-ios{
+        border-radius:none !important;
+        font-size: none !important;
+        background: none !important;
+        box-shadow: none !important; 
+    }
+
+    .card-content-md{
+       line-height: 2.5;
+    }
+    .gray .list  .row .col{
+        width: 50%;
+        padding: 0;
+    }
+    .gray .list  .row .col ion-avatar {
+        float: right;
+        width: 35%;
+    }
+    .gray .list  .row .col  .textexe{
+        width: 60%;
+        float: left;
+        height: 100%;
+    }
+    .textexe p{
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        white-space: normal;
+        font-size: 1rem;
+    }
+    .textexe h2{
+        padding-top: 1rem;
+        white-space: normal;
+        font-size: 2rem;
+    }
+    .gray .list-md .item-block .item-inner{
+        border-bottom: none;
+    }
+    .gray .list  .row .col ion-avatar img{
+        // height: auto;
+        // display: block;
+        // max-width: 100%;
+        width: 100%;
+        height: 100%;
+        margin-top: 0.8rem;
+        border-radius: 0%;
+    }
+    .gray .List .title {
+        padding:  1rem 0;
+        border-bottom:.1rem solid #cccccc;  
+    }
+    .gray .List .row{
+        width: 89.3%;
+        margin: 0 auto;
+   }
+   .gray .List .row .col i,span{
+        font-size: 1.4rem;
+        vertical-align: middle;
+   }
+   .gray .List .row .col i{
+       color: #0099d9;
+   }
+   .gray .List .row .col:last-child{
+       color: #0099d9; 
+       text-align: right;
+   }
+   .gray .List .input-wrapper{
+        width: 89.3%; 
+        margin: 0 auto;     
+   }
+   .gray .List .input-wrapper .label{
+       padding: .3rem 0;
+       margin-left: 1.5rem;
+       margin: 13px 8px 5px 0;
+       
+   }
+   .gray .List .input-wrapper font{
+       font-size: 1.4rem;
+       color:#8f8f8f;
+   }
+   .gray .List .card{
+    // width: 89.3%;
+    padding: 0 5.35%; 
+    margin: 0 auto; 
+   }
+   .gray .List .card p{
+    color:#8f8f8f;
+    font-size: 1.2rem;
+   }
+   .gray .List>.card{
+    box-shadow: none;
+    border-bottom:.1rem solid #cccccc; 
+   }
+   .gray .List .card .card-content-md{
+    padding: 0 16px;
+    padding-bottom: 1.3rem; 
+   } 
+
+}

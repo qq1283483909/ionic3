@@ -1,0 +1,71 @@
+page-contact {
+    $browser-default-font-size: 16px !default;
+    @function pxTorem($px) {
+      @return $px / $browser-default-font-size * 1rem;
+      }
+      html {
+        font-size: $browser-default-font-size;
+      }
+      .gray {
+        margin: 0;
+        width: 100%;
+        box-shadow: none;
+        background-color: #f2f2f2;
+      }
+    
+    .gray ion-card{
+        margin: 0;
+        width: 100%;
+    }
+
+      .img-responsive{
+        height: auto;
+        display: block;
+        max-width: 100%;
+      }
+      .gray .List{
+        margin-top: 0 !important;
+      }
+     .gray .title{
+          background-color: white;
+          padding: 1rem 2rem;
+          border-bottom: .1rem solid #bbbaba;   
+      }
+      .title div i{
+        color: #ff7f00;
+      }
+      .title div span{
+        font-size: 1.5rem;
+      }
+      .List .label{
+        margin: 0;
+      }
+      .List>.input-wrapper{
+          background-color: white;  
+      }
+      .List>.input-wrapper .label{
+        //   font-size: 1.1rem;
+          padding: 2rem 3rem 1rem 3rem;
+      }
+      .List>ion-item{
+        padding: 0 2.7rem 2rem 3rem;
+      }
+      .List-md .item-block .item-inner{
+          padding-right: 0;
+          border-bottom: none;
+      }
+      .List .row{
+          background-color: white;
+      }
+      .List{
+          margin-top: 2rem;
+      }
+      .List .center .row .col p{
+          padding-top: 1rem;
+          white-space: normal;
+      }
+      // .List .center{
+      //   border-bottom: .1rem solid #bbbaba; 
+      // }
+}
+

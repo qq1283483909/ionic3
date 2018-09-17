@@ -1,0 +1,96 @@
+page-batch-list {
+    $browser-default-font-size: 16px !default;
+    @function pxTorem($px) {
+      @return $px / $browser-default-font-size * 1rem;
+      }
+      html {
+        font-size: $browser-default-font-size;
+      }
+    .box *{
+        margin: 0;
+        padding: 0;
+    }
+    .box h2{
+        text-align: center;
+        margin: 0;
+        font-size: 1.8rem;
+        padding: 1rem 0
+    }
+    .box .biaoti.list{
+        margin: 0;
+        font-size: 1.6rem;
+        padding: 0;
+    }
+    .box .biaoti.list p{
+        padding: .6rem 1.6rem .6rem 1.6rem;
+        letter-spacing: .1rem;
+    }
+    .biaoti-p{
+        background-color: #e4f7fe;
+    }
+    .box .list p{
+        padding: 0 1.6rem;
+        letter-spacing: .1rem;
+    }
+    .bor-btm{
+        border-bottom: .05rem solid #f2f2f2;
+    }
+    .pad-btm3{
+        padding-bottom: .3rem;
+    }
+    .pad-9{
+        padding: .9rem 0 !important;
+    }
+    .col-888{
+        color: #888888;
+    }
+    .box .list{
+        padding: 1.8rem 0;
+    }
+    .justify .flexRightContent{
+        text-align: right;
+    }
+    .biaoti-i{
+        color: #ff9d41;
+    }
+    .biaoti i{
+        font-size: 2rem;
+    }
+    .biaoti .cont{
+        background-color: #FAFAFA;
+        margin: 2rem 1rem 0 1rem;
+        padding: 1.5rem 0;
+    }
+    .box .biaoti .cont p{
+        display: inline-block;
+        margin: 0;
+        padding: 0;
+        padding-left: 1rem;
+        line-height: 2rem;
+    }
+    .biaoti .cont .flexLeftContent{
+        width: 80%;
+    }
+    .cont .button-small-ios,.button-small-md{
+        padding: 0 0.9em;
+    }
+    .width-auto{
+        display: block;
+        width: auto;
+        float: left;
+    }
+    .max-66{
+        max-width: 66%;
+        display: inline-block;
+    }
+    .cont .flexRightContent button{
+        margin-right: 1rem;
+    }
+    .gray{
+        color: #666666;
+    }
+    .red{
+        color: #ff1e00;
+    }
+
+}

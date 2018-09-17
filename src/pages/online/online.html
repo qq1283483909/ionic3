@@ -1,0 +1,28 @@
+<!--
+  Generated template for the OnlinePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>{{type}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col col-6 class="padding-hight" *ngFor="let item of List" (click)="goPreView(item)" [ngClass]="myclass(item)">
+        <div >
+          <a>
+            {{item.Type}}
+          </a>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

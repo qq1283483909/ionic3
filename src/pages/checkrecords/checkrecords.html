@@ -1,0 +1,58 @@
+<!--
+  Generated template for the CheckrecordsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>邕e登-个人查档</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="gray">
+
+  <ion-refresher (ionRefresh)="doRefresh($event)"> 
+    <ion-refresher-content
+        pullingIcon="arrow-dropdown"
+        pullingText="下拉刷新"
+        refreshingSpinner="circles"
+        refreshingText="刷新..."> 
+    </ion-refresher-content>
+    <ion-refresher-content > 
+</ion-refresher-content>
+</ion-refresher>
+
+  <div class="scroll">
+    <div class="card">
+      <p>如有查询结果可点击查看</p>
+      <p>查验列表只保留三个月</p>
+    </div>
+  </div>
+
+  <ion-list class="list">
+    <div *ngFor="let item of checkrecordArr;let i = index" class="listitem">
+      <div>
+        <p class="text">类型：{{item.Message}}</p>
+      </div>
+      <div>
+        <p class="text">查询码:{{item.IdentityCode}}</p>
+      </div>
+      <div class="flexBox">
+        <div class="flexLeftContent"><p class="text">查询时间:{{item.CreateDateTime}}</p></div>
+        <div class="flexRightContent"><button class="buttom"  (click)="selectClick(i)">点击查看</button></div>
+      </div>
+    </div>
+  </ion-list>
+
+  <ion-infinite-scroll (ionInfinite)="doInfinite($event)" threshold="200px" [enabled]="FootisEnable" distance="5%"> 
+    <ion-infinite-scroll-content
+     loadingSpinner="bubbles"
+     loadingText="加载中..."> 
+     </ion-infinite-scroll-content> 
+ </ion-infinite-scroll>
+
+</ion-content>

@@ -1,0 +1,23 @@
+<!--
+  Generated template for the NewsDetailPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header scroll-hidden [scrollHide]='headerScrollConfig' [scrollContent]="pageContent">
+
+  <ion-navbar>
+    <ion-title>邕e登相关资讯</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content #pageContent fullscreen [bdcnavCrl]="navCtrl" swipe-right-back>
+  <div class="content">
+    <h4 class="title">{{newsdetailmodel.Title}}</h4>
+    <p *ngIf="newsdetailmodel.SubTile" class="title">{{newsdetailmodel.SubTile}}</p>
+    <img  *ngIf="newsdetailmodel.TitleImg" class="titleImage" [src]="newsdetailmodel.TitleImg" (click)="pictureBroswer()"/>
+    <p *ngIf="newsdetailmodel.ImgDescription" class="title">{{newsdetailmodel.ImgDescription}}</p>
+    <div [innerHTML]="htmlstr | html"></div>
+  </div>
+</ion-content>

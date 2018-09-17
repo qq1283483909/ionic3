@@ -1,0 +1,22 @@
+page-checkdetail {
+
+    .scrollView{
+        width: 100%;
+        min-height: 100%;
+    }
+
+    .cdids{
+        position: inherit;
+        right: 50px;
+        top: -2px;
+        text-align: center;
+        line-height: 20px;
+        font-size: 7px;
+        width: 100%;
+        padding-left: 16px
+    }
+    .cdids >img{
+        display: block;
+        margin: 0 auto
+    }
+}

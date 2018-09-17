@@ -1,0 +1,75 @@
+page-online-preview {
+    $browser-default-font-size: 16px !default;
+    @function pxTorem($px) {
+      @return $px / $browser-default-font-size * 1rem;
+    }
+    html {
+      font-size: $browser-default-font-size;
+    }
+
+    .gary{
+        background: #f2f2f2;
+
+    }
+
+    .mi-1{
+        background: white;
+        border-radius: 0.5rem;
+    }
+
+    .list{
+        padding: 0.3rem;
+        margin-top: -1.3rem;
+    }
+
+    .gary .item-block{
+        border: none !important;
+    }
+    
+    .mi-2{
+        padding-top:4.2rem;
+        padding-bottom:4.2rem;
+    }
+
+    .mi-3{
+        vertical-align: inherit;
+        color: black;
+    }
+
+    .mi-3-1{
+        color: black;
+        white-space: normal;
+    }
+
+    .mi-4{
+        padding-top:1rem;
+        margin: 0 !important;
+    }
+   
+    .gary .mi-4-1.icon{
+        font-size: 10.5rem !important;
+    }
+
+    
+    .color-zhuxiao{
+        background-color: #daeaec !important;
+    }
+    .color-biangeng{
+        background-color: #f5e4e4 !important;
+    }
+    .color-diya{
+        background-color: #cde3ff !important;
+    }
+    .color-qita{
+        background-color: #d3f1fe !important;
+    }
+    .color-yugao{
+        background-color: #f6dbcd !important;
+    }
+    .color-zhuanyi{
+        background-color: #e5e9da !important;
+    }
+    .color-chushi{
+        background-color: #dad2e7 !important;
+    }
+}

@@ -1,0 +1,87 @@
+<div class="list-div pl-0 pt-2">
+  <ion-segment [(ngModel)]="initString.tabs" class="qTabs" (ionChange)="tabsChanged()">
+    <ion-segment-button value="{{item.name}}" *ngFor="let item of initString.tabB" class="tab" [ngClass]="{active:initString.tabs==item.name}">
+      <div>{{item.name}}</div>
+    </ion-segment-button>
+  </ion-segment>
+</div>
+<div class="list-div  fell" *ngIf="initString.tabs==initString.bdcqzName">
+  <ion-list list-ios-header-border-bottom='true'>
+    <ion-item>
+      <div class="flexBox">
+        <div>桂</div>
+        <div class="flex1LeftContent">
+          <input type="number"  class="myInput" placeholder="请输入年份" value="" [(ngModel)]="open.no" (keyup)="checkValue()" />
+        </div>
+      </div>
+    </ion-item>
+    <!-- 个人查档 start -->
+    <ion-item *ngIf="index==0">
+      <ion-label>选择</ion-label>
+      <ion-select interface="action-sheet" cancelText="取消" [(ngModel)]="open.typeTxt" (ngModelChange)="checkValue()">
+        <ion-option *ngFor="let item of open.type">{{item.name}}</ion-option>
+      </ion-select>
+    </ion-item>
+    <!-- 个人查档 end -->
+
+    <!-- 机构查档 start -->
+    <ion-item *ngIf="index==1">
+      <ion-input type="text" [(ngModel)]="open.typeTxt" disabled></ion-input>
+    </ion-item>
+    <!-- 机构查档 end -->
+
+    <ion-item>
+      <div class="flexBox">
+        <div>第</div>
+        <div class="flex1LeftContent">
+          <input type="number" limit=7 class="myInput" placeholder="请输入号码" (keyup)="checkValue()" [(ngModel)]="open.noo" />
+        </div>
+        <div>号</div>
+      </div>
+    </ion-item>
+    <div padding-left>
+      <p color="light">示例：桂2018南宁市不动产权第123456号</p>
+      <p color="red">{{open.value}}</p>
+    </div>
+  </ion-list>
+</div>
+
+<div class="list-div  fell" *ngIf="initString.tabs==initString.yfqzName">
+  <ion-list list-ios-header-border-bottom='true'>
+    <ion-item>
+      <ion-label>选择</ion-label>
+      <ion-select interface="action-sheet" cancelText="取消" [(ngModel)]="open.YTypeTxt" (ngModelChange)="open.Yno='';checkValue()">
+        <ion-option *ngFor="let Ytype of open.YTypes">{{Ytype.name}}</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item class="">
+      <div class="flexBox">
+        <div>第</div>
+        <div class="flex1LeftContent">
+          <div *ngFor="let item of open.YTypes;let index=index;">
+            <div *ngIf="open.YTypeTxt == item.name">
+              <input type="tel" class="myInput"  placeholder="请输入号码" [(ngModel)]="open.Yno" (keyup)="checkValue()"
+              />
+            </div>
+          </div>
+        </div>
+        <div>号</div>
+      </div>
+    </ion-item>
+    <div padding-left>
+      <p color="light">示例：邕房权证字1234567号</p>
+      <p color="red">{{open.value}}</p>
+    </div>
+  </ion-list>
+</div>
+
+<div class="list-div  fell" *ngIf="initString.tabs==initString.qtName">
+  <ion-list list-ios-header-border-bottom='true'>
+    <ion-item>
+      <input type="text" class="myInput marginLeft0" placeholder="请输入号码" [(ngModel)]="open.value" />
+    </ion-item>
+    <div padding-left>
+      <p color="light">示例：桂2018南宁市不动产权第123456号</p>
+    </div>
+  </ion-list>
+</div>

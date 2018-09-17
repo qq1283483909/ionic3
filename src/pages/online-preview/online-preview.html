@@ -1,0 +1,35 @@
+<!--
+  Generated template for the OnlinePreviewPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>在线办理-预告类</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding class="gary">
+  <div class="mi-1" *ngFor="let item of items" (click)="goBusiness(item)">
+    <ion-list class="list list-ios">
+      <ion-item class="item item-block item-ios" [ngClass]="myclass()">
+        <div class="item-inner">
+          <div class="input-wrapper mi-2">
+            <h2>
+                <P class="mi-3-1">{{item.ProjectName}}</P>
+            </h2>
+          </div>
+          <ion-avatar item-start="" class="mi-4">
+            <svg class="icon mi-4-1" aria-hidden="true">
+              <use attr.xlink:href="{{xlink}}"></use>
+            </svg>
+          </ion-avatar>
+        </div>
+      </ion-item>
+    </ion-list>
+  </div>
+</ion-content>

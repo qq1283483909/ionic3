@@ -1,0 +1,65 @@
+page-queryhistor {
+    .gray{
+        background-color: #f2f2f2;
+    }
+    .gray .dynamic{
+        border: none;
+        color: #666666 !important;
+    }
+    .gray .dynamic div{
+        font-size: 1.8rem;
+        margin: 0 2rem;
+    }
+    .gray .segment-ios .segment-button.segment-activated{
+        background-color: #f2f2f2;
+    }
+
+    .gray .dynamic div:hover{
+        border-bottom: .1rem solid #0099d9;
+        color: #0099d9;
+    }
+    .gray div .list-ios > .item-block{
+        border-bottom: none;
+        border-top: none;
+        background-color: white;
+    }
+    .gray div .ml-2{
+        padding: 0 1.9rem 0 2rem;
+        background-color: #f2f2f2;
+    }
+
+    .gray div .ml-2 .item-inner{
+        padding-right: 0;
+        background-color: white;  
+    }
+    .gray div .ml-2 .label-ios{
+        margin: 0;
+    } 
+    .gray div .ml-2 .title{
+        padding: 2rem 0 1.3rem 1.6rem;
+        border-bottom: .1rem solid #d8dfe5 ;  
+    }
+    .gray div .ml-2 .tslist{
+        padding-top:1rem; 
+        margin: 0;
+        margin-bottom: 1.5rem;
+    }
+    .gray div .ml-2 .title i{
+        color:#ff7f00; 
+        font-size: 2rem;
+        vertical-align: middle;
+    }
+    .gray div .ml-2 .title span{
+        font-size: 1.8rem;
+        vertical-align: middle;
+    }
+    .gray .segment .active{
+        color: #0099d9!important;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+        border-bottom: 2px solid #488aff;
+    } 
+   
+}

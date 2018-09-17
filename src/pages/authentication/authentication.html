@@ -1,0 +1,40 @@
+<ion-header scroll-hidden [scrollHide]='headerScrollConfig' [scrollContent]="pageContent" >
+
+  <ion-navbar>
+    <ion-title>我的</ion-title>
+  </ion-navbar>
+
+</ion-header>
+<ion-content class="gray" #pageContent fullscreen [Tabs]="tabs" [selectIndex]=2 swipe-changetabs> 
+  <ion-item class="personal item-clear">
+    <div  item-start="" class="col-6 center">
+        <img class="img-responsive" [src]="loginInfo.getUserHeadImage || 'assets/imgs/h.png'" alt="头像">
+    </div>
+        <ion-label class="col-12 padding">
+          <h4 class="h2" *ngIf="loginInfo.IsLogin && loginInfo.personName">{{loginInfo.personName}}（{{loginInfo.realNameTips}}）</h4>
+          <h4 class="h2" *ngIf="!loginInfo.IsLogin" (click)="pushToLoginPage()">您未登录,请点击进行登录</h4>
+          <p class="p" *ngIf="loginInfo.IsLogin && loginInfo.IsCompanyAccount">您是系统备案用户</p>
+          <p class="p" *ngIf="loginInfo.IsLogin && loginInfo.IsCompanyAccount && loginInfo.BindCompannyName"> 您备案的企业名称是：{{loginInfo.BindCompannyName}}</p>
+        </ion-label>
+  </ion-item>
+
+  <ion-list class="list  personal_list">
+
+    <button class="item  item-icon-left" ion-item="" [navPush]="ForgetpasswordPage">
+      <i class="iconfont icon-klmxiugaimima font36 bc-red"></i>
+      <font>修改密码</font>
+    </button>
+    <button class="item item-block  item-icon-left" ion-item="" (click)="changePhoneNum()" *ngIf="loginInfo.IsLogin">
+      <i class="iconfont icon-biangengshoujihao font36 bc-red"></i>
+      <font>更换手机号码</font>
+    </button>
+    <button class="item item-block  item-icon-left" ion-item="" (click)="advice()">
+      <i class="iconfont icon-yijianfankui font36 bc-green"></i>
+      <font>意见反馈</font>
+    </button>
+    <button class="item item-block  item-icon-left" ion-item="" *ngIf="loginInfo.IsLogin" (click)="loginoutClick()">
+      <i class="iconfont icon-zhuxiao font36 bc-blue"></i>
+      <font>注销登入</font>
+    </button>
+  </ion-list>
+</ion-content>

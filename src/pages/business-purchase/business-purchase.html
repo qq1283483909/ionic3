@@ -1,0 +1,115 @@
+<!--
+  Generated template for the BusinessPurchasePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>我的业务</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="business">
+  <div *ngFor="let item of businessData">
+    <ion-list *ngIf="item.Children != ''">
+      <h3>{{item.ProjectName}}</h3>
+      <h2>业务信息</h2>
+      <div class="text">
+        <p>
+          <span>申请人：</span>
+          <span class="col-span">{{item.PersonName}}</span>
+        </p>
+        <p>
+          <span>批量受理号：</span>
+          <span class="col-span">{{item.AppointmentNo}}</span>
+        </p>
+        <p>
+          <span>申请人身份证：</span>
+          <span class="col-span">{{item.PersonNo}}</span>
+        </p>
+        <p>
+          <span>手机号码：</span>
+          <span class="col-span">{{item.MobilePhone}}</span>
+        </p>
+      </div>
+      <div class="cont flexBox">
+        <div class="flexLeftContent flex1W100">
+          <p>可预约发证业务</p>
+          <p class="col-span">已选择({{selectCount}}/{{item.Children.length}})条</p>
+        </div>
+        <div class="flexRightContent" (click)="selectAll()">
+          <p>
+            <i class="iconfont col-i">&#xe7ec;</i>
+            <span class="col-i" id="cla1" *ngIf="IsSelectAll">全部选择</span>
+            <span class="col-i" id="cla1" *ngIf="!IsSelectAll">全部取消</span>
+          </p>
+        </div>
+      </div>
+      <ion-item class="cent" *ngFor="let child of item.Children ;let i = index">
+        <div class="flexBox">
+          <div class="flexLeftContent" (click)="changechex(i)">
+            <i class="iconfont col-if" [ngClass]="myclass(i)"></i>
+          </div>
+          <div class="flexRightContent flex1W100">
+            <div class="flexBox">
+              <p class="">
+                <span>流水号：</span>
+                <span class="col-span">{{child.AppointmentNo}}</span>
+              </p>
+            </div>
+            <div *ngFor="let person of child.Persons">
+              <div class="flexBox" *ngIf="person.RoleName == '义务人'">
+                <p>
+                  <span>义务人：</span>
+                  <span class="col-span">{{person.PersonName}}</span>
+                </p>
+              </div>
+              <div class="flexBox" *ngIf="person.RoleName == '权利人'">
+                <p>
+                  <span>权利人：</span>
+                  <span class="col-span">{{person.PersonName}}</span>
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="flexRightContent mr-1">
+            <button ion-button small (click)="goApplicationInformationPage(child.Id,child.ProjectTypeId)">查看</button>
+          </div>
+        </div>
+      </ion-item>
+      <div class="submit">
+        <button ion-button block [disabled]="selectCount == 0" (click)="getbtn()">加入预约列表</button>
+      </div>
+    </ion-list>
+  </div>
+
+
+  <div *ngFor="let item of businessData"> 
+    <ion-list class="biaotou" *ngIf="item.Children == ''">
+      <h2>{{item.ProjectName}}</h2>
+      <p class="biaoti-p">业务信息</p>
+      <div class="pad-9 cont bor-btm">
+        <p>创建日期:
+          <span class="gray">{{item.CreateDate}}</span>
+        </p>
+        <p>业务流水号:
+          <span class="gray">{{item.AppointmentNo}}</span>
+        </p>
+      </div>
+      <div *ngFor="let person of item.Persons">
+        <div class="pad-9 cont bor-btm" *ngIf="person.RoleName == '权利人'">
+          <p>权利人:
+            <span class="gray">{{person.PersonName}}</span>
+          </p>
+        </div>
+      </div>
+      <div class="next">
+        <button ion-button block>下一步</button>
+      </div>
+    </ion-list>
+  </div>
+</ion-content>

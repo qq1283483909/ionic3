@@ -1,0 +1,32 @@
+<!--
+  Generated template for the RelevantdepartnicesPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header scroll-hidden [scrollHide]='headerScrollConfig' [scrollContent]="pageContent">
+
+  <ion-navbar>
+    <ion-title>相关部门</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding #pageContent fullscreen>
+  <div  class="ni-1">
+    <label>{{center}}</label>
+  </div>
+  <div *ngFor="let information of data" class="gos">
+    <div>
+      <div class="topt">
+      <div class="bos"> </div>
+     <div [innerHTML]="information.Title | html" class="tos"></div>
+     </div>
+    </div>
+    <div class="mi-1">
+   <div [innerHTML]="information.Content | html"></div>
+    </div>
+    <img [src]="information.Img" alt=""/>
+  </div>
+</ion-content>

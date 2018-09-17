@@ -1,0 +1,46 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>我的授权</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <div class="subtitle">认证列表</div>
+  <ion-list class="myList" *ngIf="authenticationList!=''">
+    <ion-item no-padding *ngFor="let item of authenticationList">
+      <div class="flexBox font14">
+        <div class="flex1LeftContent">状态：
+          <span class="fontColorRed" *ngIf="item.State==0">未签订</span>
+          <span class="fontColorGreen" *ngIf="item.State==1">已认证</span>
+        </div>
+        <div class="flexContent">
+          <button ion-button color="danger" class="backgroundRed" *ngIf="item.State==0" (click)="goDetails(item)">认&nbsp;&nbsp;证</button>
+          <button ion-button class="backgroundGreen" *ngIf="item.State==1" (click)="goDetails(item)">业务详情</button>
+        </div>
+      </div>
+      <h4 class="limit1">不动产坐落：{{item.BDCAddress}}</h4>
+      <p>业务类型：{{(item.TypeCode=='d4-2')?'预购商品房抵押权预告登记':''}}</p>
+    </ion-item>
+  </ion-list>
+
+  <div class="flexCloumn" *ngIf="authenticationList==''">
+    <div class="flexMain flexContent">
+      <div padding class="w100 textCenter">
+          <div class="font16 fontColor387ef5">暂无需认证业务</div><br/>
+          <button ion-button block outline (click)="doRefresh()">刷新</button>
+      </div>
+    </div>
+  </div>
+
+  <!--上拉刷新 start -->
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content pullingIcon="arrow-dropdown" pullingText="下拉刷新" refreshingSpinner="circles" refreshingText="刷新...">
+    </ion-refresher-content>
+    <ion-refresher-content>
+    </ion-refresher-content>
+  </ion-refresher>
+  <!--上拉刷新 end --> 
+</ion-content>

@@ -1,0 +1,51 @@
+page-perfect-the-information {
+    $browser-default-font-size: 16px !default;
+    @function pxTorem($px) {
+      @return $px / $browser-default-font-size * 1rem;
+    }
+    html {
+      font-size: $browser-default-font-size;
+    }
+    .box *{
+        margin: 0;
+        padding: 0;
+    }
+    .box h2{
+        text-align: center;
+        margin: 0;
+        font-size: 1.5rem;
+        padding: 1rem 0
+    }
+    .box .list{
+        font-size: 1.4rem;
+        letter-spacing: .1rem;
+    }
+    .box .biaoti{
+        padding: .6rem 2rem;
+        letter-spacing: .1rem;
+        background-color: #e4f7fe;
+    } 
+    .box .flexBox{
+        padding: 1rem 2rem;
+    }
+    .fon-25{
+        font-size: 2.5rem;
+        color:#0099d9;
+        vertical-align: middle;
+    }
+    .col-span{
+        color: #ff7f00;
+        letter-spacing: 0;
+    }
+    .wid-1{
+        display: inline-block;
+        width: 1rem;
+        text-align: right;
+    }
+    .pr-1{
+        padding-right: 1.5rem;
+    }
+    .bor-btm{
+        border-bottom: .05rem solid #f2f2f2; 
+    }
+}

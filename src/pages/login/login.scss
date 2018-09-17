@@ -1,0 +1,76 @@
+page-login {
+    $browser-default-font-size: 16px !default;
+    @function pxTorem($px) {
+      @return $px / $browser-default-font-size * 1rem;
+    }
+    html {
+      font-size: $browser-default-font-size;
+    }
+    .login .list.card  {
+        margin: 0;
+        margin-top: 4rem;
+        box-shadow: none;
+    }  
+    .login .list.card.log{
+        margin-bottom: 5rem !important;
+    }
+    .login .card .item >img{
+        height: auto;
+        max-width: 100%;
+        display: block;
+        width: 12.5rem;
+        margin: 0 auto;
+    }
+    .login .content .list .flexBox{
+        padding: 0;
+        border: none;
+        color: #41cdfc;
+        margin: 1rem 0;
+    }   
+    .login .content{
+        width: 70%;
+        margin: 0 auto;
+        top: 0;
+    }
+    // .login .content .list .flexBox .flexLeftContent{
+    //     flex-grow:1;
+    // }
+    // .login .content .list .flexBox .flexRightContent{
+    //     flex-grow:11;
+    // }
+
+    .login .content .list .flexBox i{
+        font-size: 2.7rem;
+        vertical-align: middle;
+        padding-right: .5rem;
+    }
+    .login .content .list .flexBox input{
+        display: block;
+        width: 100%;
+        font-size: 2rem;
+        border: none;
+        border-bottom: .1rem solid #41cdfc;
+    }
+    .item-floating-label input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
+        color: #41cdfc;
+    }
+    .item-floating-label input:-moz-placeholder, textarea:-moz-placeholder {
+        color:#41cdfc;
+    }
+    .item-floating-label input::-moz-placeholder, textarea::-moz-placeholder {
+        color:#41cdfc;
+    }
+    .item-floating-label input:-ms-input-placeholder, textarea:-ms-input-placeholder {
+        color:#41cdfc;
+    }
+
+    .login .content .operate{
+        margin-top: 2rem;
+    }
+    .login .content .operate button{
+        // height: 3.8rem;
+        font-size: 1.5rem;
+        background-color:#00c0ff;
+        margin: 1rem 0.2rem;
+    }
+}

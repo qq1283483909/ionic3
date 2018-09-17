@@ -1,0 +1,115 @@
+<ion-header>
+  <ion-navbar hideBackButton="true">
+    <ion-buttons left>
+      <button ion-button icon-only (click)="goBack()">
+        <ion-icon ios="ios-arrow-back" class="flexContent"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>{{initString.cdjlName}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding class="gray">
+  <div padding>
+    <ion-segment [(ngModel)]="initString.pet" (ionChange)="petChanged()">
+      <ion-segment-button value="{{item.name}}" *ngFor="let item of initString.tabA" class="dynamic" [ngClass]="{active:initString.pet==item.name}">
+        <div>{{item.name}}</div>
+      </ion-segment-button>
+    </ion-segment>
+  </div>
+
+  <div [ngSwitch]='initString.pet'>
+    <!-- 公开档的模块  因为公开档几乎一样所以请求的接口只在ts  里面判断 -->
+    <div *ngSwitchCase="initString.gkdcxName">
+      <ion-list class="show-1" *ngIf="initString.ListA.length!=0">
+        <ion-item class="bgfff" *ngFor="let item of initString.ListA">
+          <div class="flexBox">
+            <div class="flex1">
+              <p>查询号：{{item.QueryId}}</p>
+              <p>校验码：{{item.IdentityCode}}</p>
+              <p>查询时间：{{item.CreateDateTime}}</p>
+              <p>查档类型：{{item.FamilyId}}</p>
+            </div>
+            <div class="flexContent" *ngIf="(item.ResponseCode===1||item.ResponseCode===3)">
+              <button ion-button color="secondary">点击查看</button>
+            </div>
+          </div>
+        </ion-item>
+      </ion-list>
+
+      <ion-list class="show-1" *ngIf="initString.HistoryTypeA">
+        <ion-item class="bgfff">
+          暂无公开查档历史记录
+        </ion-item>
+      </ion-list>
+    </div>
+
+    <!-- 名下档的模块 -->
+    <div *ngSwitchCase="initString.mxdcxName">
+      <ion-list class="show-1" *ngIf="initString.ListB.length!=0">
+        <ion-item class="bgfff" *ngFor="let person of initString.ListB">
+          <div class="flexBox">
+            <div class="flex1">
+              <p>查询号：{{person.QueryId}}</p>
+              <p>校验码：{{person.IdentityCode}}</p>
+              <p>查询时间：{{person.CreateDateTime}}</p>
+              <p *ngIf="person.FamilyId">查档类型：家庭档</p>
+            </div>
+            <div class="flexContent" *ngIf="(person.ResponseCode===1||person.ResponseCode===3)">
+              <button ion-button color="secondary">点击查看</button>
+            </div>
+          </div>
+        </ion-item>
+      </ion-list>
+
+      <ion-list class="show-1" *ngIf="initString.HistoryTypeB">
+        <ion-item class="bgfff">
+          暂无公开查档历史记录
+        </ion-item>
+      </ion-list>
+    </div>
+
+    <!-- 个人档的模块 -->
+    <div *ngSwitchCase="initString.grdcxName">
+      <ion-list class="show-1" *ngIf="initString.ListB.length!=0">
+        <ion-item class="bgfff" *ngFor="let person of initString.ListB">
+          <div class="flexBox">
+            <div class="flex1">
+              <p>查询号：{{person.QueryId}}</p>
+              <p>校验码：{{person.IdentityCode}}</p>
+              <p>查询时间：{{person.CreateDateTime}}</p>
+              <p>查询人姓名：{{person.QueryUserName}}</p>
+              <p>查询人身份号：{{person.QueryUserIDNo}}</p>
+            </div>
+            <div class="flexContent" *ngIf="(person.ResponseCode===1||person.ResponseCode===3)">
+              <button ion-button color="secondary">点击查看</button>
+            </div>
+          </div>
+        </ion-item>
+      </ion-list>
+
+      <ion-list class="show-1" *ngIf="initString.HistoryTypeB">
+        <ion-item class="bgfff">
+          暂无公开查档历史记录
+        </ion-item>
+      </ion-list>
+    </div>
+  </div>
+
+  <!--上拉刷新 start -->
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content pullingIcon="arrow-dropdown" pullingText="下拉刷新" refreshingSpinner="circles" refreshingText="刷新...">
+    </ion-refresher-content>
+    <ion-refresher-content>
+    </ion-refresher-content>
+  </ion-refresher>
+  <!--上拉刷新 end -->
+
+  <!--下滑加载数据 start-->
+  <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+    <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="加载中...">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+  <!--下滑加载数据 end-->
+</ion-content>

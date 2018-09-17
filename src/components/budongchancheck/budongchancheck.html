@@ -1,0 +1,14 @@
+<ion-list list-ios-header-border-bottom='true' class="arrange-2 mb-0">
+  
+  <ion-item *ngIf="showyear">
+    <ion-label fixed>年份</ion-label>
+    <ion-input type="number"  [(ngModel)]="value" required minlength="4" maxlength="4" #name1="ngModel" ></ion-input>
+  </ion-item>
+  <ion-item *ngIf="showbianhao">
+    <ion-label fixed>编号</ion-label>
+    <ion-input type="text"  [(ngModel)]="number" required minlength="7"></ion-input>
+  </ion-item>
+  <ion-item *ngIf="showzhenghao">
+    <p class="font16">桂<span class="bule">{{innerValue}}</span>不动产权证<span  class="bule">{{num}}</span></p>
+  </ion-item>
+</ion-list>

@@ -1,0 +1,215 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>查档服务-个人查档</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content class="gray">
+  <div padding>
+    <ion-segment [(ngModel)]="initString.pet" (ionChange)="petChanged()">
+      <ion-segment-button value="{{item.name}}" *ngFor="let item of initString.tabA"  class="dynamic" [ngClass]="{active:initString.pet==item.name}">
+        <div>{{item.name}}</div>
+      </ion-segment-button> 
+    </ion-segment>
+  </div> 
+
+  <div [ngSwitch]="initString.pet">
+    <ion-list *ngSwitchCase="initString.mxdcxName" class="show-1">
+      <ion-item class="ml-2 mt-0">
+        <div class="title">
+          <div>
+            <i class="iconfont">&#xe790;</i>
+            <span>个人档查询</span>
+          </div>
+        </div> 
+        <beforename [formData]="this.infoForm" [query]=0></beforename>
+        
+        <div class="list-div center">
+          <button (click)="perSonQuery()">{{initString.cxbrName}}</button>
+        </div>
+      </ion-item>
+      <ion-item class="ml-2 mt-1">
+       <div class="title">
+          <div>
+            <i class="iconfont">&#xe790;</i>
+            <span>家庭档查询</span>
+          </div>
+        </div> 
+         <!-- <div class="list-div" (click)="addFamily()">
+          <p>+&nbsp;&nbsp;&nbsp;添加家庭成员(含本人)</p>
+        </div> -->
+        <!-- <ion-grid *ngFor="let family of FamilyList;let firstIndex = index">
+          <ion-row>
+            <ion-col col-12 col-sm-4 col-md-4 col-lg-4 col-xl-12>
+              <span>姓名:</span>
+            </ion-col>
+            <ion-col col-12 col-sm-8 col-md-8 col-lg-8 col-xl-12>
+              <span>{{family.personName}}</span>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-12 col-sm-4 col-md-4 col-lg-4 col-xl-12>
+              <span>身份证:</span>
+            </ion-col>
+            <ion-col col-12 col-sm-8 col-md-8 col-lg-8 col-xl-12>
+              <span>{{family.personNo}}</span>
+              <span class="pull-le">
+                <span class="span del" (click)="deleteFamilyPersonal(firstIndex)" *ngIf="firstIndex!=0">删除</span>
+                <span class="span add" (click)="familyPersonalQuery(firstIndex)" *ngIf="!family.auth">认证</span>
+              </span>
+
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-12 col-sm-4 col-md-4 col-lg-4 col-xl-12>
+              <span>曾用名:</span>
+            </ion-col>
+            <ion-col col-12 col-sm-8 col-md-8 col-lg-8 col-xl-12 *ngFor="let value of family.list;let secondIndex =index">
+              <input class="input" placeholder="请输入用户名" [(ngModel)]="value.name">
+              <i class="iconfont i" (click)="addName(firstIndex,secondIndex)" *ngIf="secondIndex==0">&#xe613;</i>
+              <i class="iconfont i" (click)="deleteName(firstIndex,secondIndex)" *ngIf="secondIndex!=0">&#xe6b7;</i>
+            </ion-col>
+          </ion-row>
+        </ion-grid> -->
+
+        <beforename [formData]="this.familyForm"  [query]=0 [queryFamily]=0></beforename>
+        
+
+        <div class="list-div center">
+          <button (click)="familyQuery()">{{initString.cxjtcyName}}</button>
+        </div>
+      </ion-item>
+      <div class="ml-2 mt-1">
+        <button block="" color="bule2" (click)="queryHistory()" class="button-bule disable-hover button button-ios button-default button-default-ios button-block button-block-ios"
+          ion-button="" ng-reflect-block="">
+          <span class="button-inner">
+            {{initString.cdjlName}}
+          </span>
+          <div class="button-effect"></div>
+        </button>
+      </div>
+    </ion-list>
+    <ion-list *ngSwitchCase="initString.gkdcxName" class="show-2">
+      <ion-item class="ml-2 back mt-0">
+        <ion-list class="margin-none">
+          <div class="list-div top-7">
+            <span>姓名:</span>
+            <span>{{user.personName}}</span>
+          </div>
+          <div class="list-div top-7">
+            <span>身份证:</span>
+            <span>{{user.personNo}}</span>
+          </div>
+        </ion-list>
+      </ion-item>
+      <div class="ml-2 mt-1">
+        <div class="bgfff">
+
+          <div class="title">
+            <div>
+              <i class="iconfont">&#xe790;</i>
+              <span>证书类型</span>
+            </div>
+          </div>
+          <querytabs index=0 [open]="this.open"></querytabs>
+          <!-- <div class="list-div pl-0 pt-2">
+            <ion-segment [(ngModel)]="initString.tabs" class="qTabs" (ionChange)="tabsChanged()">
+              <ion-segment-button value="{{item.name}}" *ngFor="let item of initString.tabB"  class="tab" [ngClass]="{active:initString.tabs==item.name}">
+                <div>{{item.name}}</div>
+              </ion-segment-button> 
+            </ion-segment>
+          </div>
+          <div class="list-div  fell" *ngIf="initString.tabs==initString.bdcqzName">
+            <ion-list list-ios-header-border-bottom='true'>
+              <ion-item>
+                <ion-label>桂</ion-label>
+                <ion-input type="number" limit=4 placeholder="请输入年份" value="" [(ngModel)]="open.no" (keyup)="checkValue()"></ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-label>选择</ion-label>
+                <ion-select interface="action-sheet" cancelText="取消" [(ngModel)]="open.typeTxt" (ngModelChange)="checkValue()">
+                  <ion-option *ngFor="let item of open.type">{{item.name}}</ion-option>
+                </ion-select>
+              </ion-item>
+              <ion-item>
+                <div class="flexBox">
+                  <div>第</div>
+                  <div class="flex1LeftContent">
+                    <input type="number" limit=7 class="myInput" placeholder="请输入号码" (keyup)="checkValue()" [(ngModel)]="open.noo" />
+                  </div>
+                  <div>号</div>
+                </div>
+              </ion-item>
+              <div padding-left>
+                <p color="light">示例：桂2018南宁市不动产权第123456号</p>
+                <p color="red">{{open.value}}</p>
+              </div>
+            </ion-list>
+          </div>
+
+          <div class="list-div  fell" *ngIf="initString.tabs==initString.yfqzName">
+            <ion-list list-ios-header-border-bottom='true'>
+              <ion-item>
+                <ion-label>选择</ion-label>
+                <ion-select interface="action-sheet" cancelText="取消" [(ngModel)]="open.YTypeTxt" (ngModelChange)="open.Yno='';checkValue()">
+                  <ion-option *ngFor="let Ytype of open.YTypes">{{Ytype.name}}</ion-option>
+                </ion-select>
+              </ion-item>
+              <ion-item class="">
+                <div class="flexBox">
+                  <div>第</div>
+                  <div class="flex1LeftContent" *ngIf="open.YTypeTxt=='邕房权证字'||open.YTypeTxt=='' ">
+                    <input type="tel" class="myInput" limit=8 placeholder="请输入号码" [(ngModel)]="open.Yno" (keyup)="checkValue()" />
+                  </div>
+                  <div class="flex1LeftContent" *ngIf="open.YTypeTxt=='邕房预字'">
+                    <input type="tel" class="myInput" limit=7 placeholder="请输入号码" [(ngModel)]="open.Yno" (keyup)="checkValue()" />
+                  </div>
+                  <div>号</div>
+                </div>
+              </ion-item>
+              <div padding-left>
+                <p color="light">示例：邕房权证字1234567号</p>
+                <p color="red">{{open.value}}</p>
+              </div>
+
+            </ion-list>
+          </div>
+
+          <div class="list-div  fell" *ngIf="initString.tabs==initString.qtName">
+            <ion-list list-ios-header-border-bottom='true'>
+              <ion-item>
+                <input type="text" limit=12 class="myInput marginLeft0" placeholder="请输入号码" [(ngModel)]="open.code" />
+              </ion-item>
+              <div padding-left>
+                <p color="light">示例：邕房权证字1234567号</p>
+                <p color="red"></p>
+              </div>
+
+            </ion-list>
+          </div> -->
+        </div>
+      </div>
+
+
+      <div class="ml-2 mt-1">
+        <button block="" color="bule2" (click)="openQuery()" class="button-bule disable-hover button button-ios button-default button-default-ios button-block button-block-ios"
+          ion-button="" ng-reflect-block="">
+          <span class="button-inner">
+            {{initString.cxgkdName}}
+          </span>
+          <!-- <div class="button-effect"></div> -->
+        </button>
+      </div>
+      <div class="ml-2 mt-1">
+        <button block="" color="bule2" (click)="queryHistory()" class="button-bule disable-hover button button-ios button-default button-default-ios button-block button-block-ios"
+          ion-button="" ng-reflect-block="">
+          <span class="button-inner">
+            {{initString.cdjlName}}
+          </span>
+          <div class="button-effect"></div>
+        </button>
+      </div>
+    </ion-list>
+  </div>
+</ion-content>

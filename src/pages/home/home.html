@@ -1,0 +1,137 @@
+<ion-header>
+    <ion-navbar>
+      <ion-title>首页</ion-title>
+    </ion-navbar>
+  </ion-header>
+  
+  <ion-content class="gray" [Tabs]="tabs" [selectIndex]=0 swipe-changetabs> 
+    <ion-card>
+      <img src="assets/imgs/banner.png" alt="">
+    </ion-card>
+    <ion-item>
+      <ion-row class="row">
+        <ion-col class="col" (click)="goOnlinePage('在线办理')">
+          <i class="iconfont icon-1">&#xe63b;</i>
+          <p>在线办理</p>
+        </ion-col>
+        <ion-col class="col" (click)="goOnlinePage('网上预审')" >
+            <i class="iconfont icon-2">&#xe619;</i>
+          <p>网上预审</p>
+        </ion-col>
+        <ion-col class="col" (click)="goProgressQueryPage('业务查询')">
+            <i class="iconfont icon-3">&#xe69c;</i>
+          <p>业务查询</p>
+        </ion-col>
+      </ion-row>
+      <ion-row class="row">
+        <ion-col class="col" (click)="goMyBusinessSerial()"> 
+            <i class="iconfont icon-4">&#xe69c;</i>
+          <p>我的业务</p>
+        </ion-col>
+        <ion-col class="col" (click)="goAuthorization()"> 
+            <i class="iconfont icon-5">&#xe714;</i>
+          <p>我的授权</p>
+        </ion-col>
+        <ion-col class="col" (click)="goQuer()">
+            <i class="iconfont icon-6">&#xe622;</i>
+          <p>查档服务</p>
+        </ion-col>
+      </ion-row>
+    </ion-item>
+  
+    <ion-list class="list">
+      <ion-row class="row">
+        <ion-col class="col" (click)="goBusinesGuide()">
+          <div class="item-wrapper">
+            <ion-item class="">
+              <div class="textexe">
+                <h2>业务指南</h2>
+                <p>点击查看相关指南</p>
+              </div>
+              <ion-avatar>
+                <svg class="icon fon-5" aria-hidden="true">
+                  <use xlink:href="#icon--zhinanzhen"></use>
+                </svg>
+              </ion-avatar>
+            </ion-item>
+          </div>
+        </ion-col>
+        <ion-col class="col" (click)="gocomplexquery()">
+          <ion-item class="item item-block item-ios">
+            <div class="textexe">
+              <h2>楼盘查询</h2>
+              <p>点击查询相关楼盘</p>
+            </div>
+            <ion-avatar>
+              <img src="assets/imgs/loupan.png">
+            </ion-avatar>
+            <div class="button-effect"></div>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+  
+      <ion-row class="row">
+        <ion-col class="col">
+          <div class="item-wrapper">
+            <ion-item class=""  (click)="goRelevantdepartmentsPage()">
+              <div class="textexe">
+                <h2>相关部门</h2>
+                <p>点击查看部门简介</p>
+              </div>
+              <ion-avatar>
+                <img src="assets/imgs/bumen.png">
+              </ion-avatar>
+            </ion-item>
+          </div>
+        </ion-col>
+        <ion-col class="col">
+          <ion-item class="item item-block item-ios" (click)="goconnection()">
+            <div class="textexe">
+              <h2>网站链接</h2>
+              <p>点击查看相关网站</p>
+            </div>
+            <ion-avatar>
+              <img src="assets/imgs/wangzhan.png">
+            </ion-avatar>
+            <div class="button-effect"></div>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+    </ion-list>
+    <ion-list class="List">
+      <div class="title">
+        <ion-row class="row">
+          <ion-col class="col">
+            <div>
+              <i class="iconfont">&#xe790;</i>
+              <span>最新资讯</span>
+            </div>
+          </ion-col>
+          <ion-col class="col" offset-4="">
+            <div (click)="pushToNews()">
+              <span>更多</span>
+              <i class="iconfont">&#xe7b7;</i>
+            </div>
+          </ion-col>
+        </ion-row>
+      </div>
+      <div *ngFor="let item of newsList">
+      <newitem [item]="item" [IsHome]="true"></newitem>
+      </div>
+      <!-- <div class="input-wrapper">
+        <ion-label class="label label-md" >
+          <font>
+            新变化!南宁不动产登记更方便
+          </font>
+        </ion-label>
+      </div>
+      <ion-card class="card">
+        <img src="assets/imgs/xianchang.png">
+        <ion-card-content class="card-content card-content-md">
+          <p>
+            转自南国早报
+          </p>
+        </ion-card-content>
+      </ion-card> -->
+    </ion-list>
+  </ion-content>

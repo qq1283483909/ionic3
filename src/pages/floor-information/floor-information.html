@@ -1,0 +1,45 @@
+<!--
+  Generated template for the FloorInformationPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>楼盘查询</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="floor">
+  <h3>{{title}}</h3>
+  <h2>楼层信息</h2>
+  <ion-list>
+    <ion-item *ngFor="let item of subList; let i = index" (click)="goEditingPage(item)">
+      <ion-row>
+        <ion-col>
+          <p class="black">
+            <span *ngIf="item.length > 0">第{{item[0].FloorNo}}层</span>
+            <span class="span-style">{{item.length}}</span>
+          </p>
+        </ion-col>
+        <ion-col>
+          <p>
+            <span>已勾选</span>
+            <span class="span-style">{{CaneditList[i]}}</span>
+          </p>
+        </ion-col>
+        <ion-col>
+          <p class="flexBox">
+            <span>可编辑</span>
+            <span class="span-style">{{item.length - CaneditList[i]}}</span>
+            <i class="iconfont flexRightContent flex1W100">&#xef02;</i>
+          </p>
+        </ion-col>
+      </ion-row>
+    </ion-item>
+   
+  </ion-list>
+</ion-content>

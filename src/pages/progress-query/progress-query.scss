@@ -1,0 +1,34 @@
+page-progress-query {
+      .gray .title {
+        padding: 1rem;
+        border-bottom: .1rem solid #cccccc;
+      }
+      .f16 {
+        font-size: 1.6rem;
+      }
+      .bc-yellow {
+        color: #ff7f00
+      }
+      input::-webkit-input-placeholder {
+        font-size: 1.4rem;
+      }
+      .bg-color {
+        color: #333333;
+        background-color: #ffffff;
+        border-width: 0;
+      }
+      
+      .icon-msnui-radio:before { content: "\e6c3"; }
+      .segment-ios .segment-button {
+        @extend .bg-color,.icon-msnui-radio:before
+    
+    
+      }
+      .segment-ios .segment-button.segment-activated{
+        @extend .bg-color;
+      }
+
+      .ni-1{
+          font-size: 16px !important;
+      }
+}

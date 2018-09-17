@@ -1,0 +1,98 @@
+<!--
+  Generated template for the ApplicationInformationPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>我的业务</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="box">
+  <ion-list class="biaoti" *ngFor="let item of appLicationData">
+    <h2>{{item.ProjectType}}{{item.MortgageType}}</h2>
+    <p class="biaoti-p">不动产登记申请表(转移类)</p>
+    <div class="pad-9 cont">
+      <p>权利类型:
+        <span>{{item.RightType}}</span>
+      </p>
+      <p>登记类型:
+        <span>{{item.RegType}}</span>
+      </p>
+      <p>预告登记:
+        <span>{{item.ProjectType}}</span>
+      </p>
+      <p>申请方式:
+        <span>{{item.RequestMethod}}</span>
+      </p>
+      <p>不动产坐落:
+        <span>{{item.BDCAddress}}</span>
+      </p>
+      <p>房屋面积:
+        <span>{{item.HouseArea}}</span>
+      </p>
+      <p>成交总价(元) :
+        <span>{{item.HousePrice}}</span>
+      </p>
+    </div>
+    <div *ngFor="let RequestPersons of item.RequestPersons">
+      <ion-list class="biaoti" *ngIf="RequestPersons.RoleName == '权利人'">
+        <p class="biaoti-p">权利人信息</p>
+        <div class="pad-9 cont bor-btm">
+          <p>权利人:
+            <span>{{RequestPersons.PersonName}}</span>
+          </p>
+          <p>证件号码:
+            <span>{{RequestPersons.PaperNo}}</span>
+          </p>
+          <p>手机号码:
+            <span>{{RequestPersons.MobileNo}}</span>
+          </p>
+          <p>通信地址:
+            <span></span>
+          </p>
+          <p>类型:
+            <span>{{RequestPersons.PersonType}}</span>
+          </p>
+          <p>证件类型:
+            <span>{{RequestPersons.PaperName}}</span>
+          </p>
+          <p>共有方式:
+            <span>{{RequestPersons.ShareType}}</span>
+          </p>
+        </div>
+      </ion-list>
+      <ion-list class="biaoti" *ngIf="RequestPersons.RoleName == '义务人'">
+        <p class="biaoti-p">义务人信息</p>
+        <div class="pad-9 cont bor-btm">
+          <p>义务人:
+            <span>{{RequestPersons.PersonName}}</span>
+          </p>
+          <p>证件号码:
+            <span>{{RequestPersons.PaperNo}}</span>
+          </p>
+          <p>手机号码:
+            <span>{{RequestPersons.MobileNo}}</span>
+          </p>
+          <p>通信地址:
+            <span></span>
+          </p>
+          <p>类型:
+            <span>{{RequestPersons.PersonType}}</span>
+          </p>
+          <p>证件类型:
+            <span>{{RequestPersons.PaperName}}</span>
+          </p>
+          <p>共有方式:
+            <span>{{RequestPersons.ShareType}}</span>
+          </p>
+        </div>
+      </ion-list>
+    </div>
+  </ion-list>
+</ion-content>

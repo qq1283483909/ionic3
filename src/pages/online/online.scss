@@ -1,0 +1,46 @@
+page-online {
+    .padding-hight {
+        padding: 7.15rem 0;
+        display: -box;
+        display: -webkit-box;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
+        display: -moz-box;
+        display: -webkit-box;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .padding-hight a {
+        text-decoration: none;
+        color: #333333;
+        font-size: 1.9rem;
+      }
+      .grid {
+        padding: 0;
+      }
+      .f19 {
+        font-size: 1.9rem;
+      }
+      .back-yugao {
+        background-color:#EBEBEB;
+      }
+      .back-zhuxiao {
+        background-color:#DFE8ED;
+      }
+      .back-chushi {
+        background-color:#D7DFE2;
+      }
+      .back-diya {
+        background-color:#EEF7FE;
+      }
+      .back-biangeng {
+        background-color:#F9F9F9;
+      }
+      .back-qita {
+        background-color:#E1E1E1;
+      }
+      .back-zhuanyi {
+        background-color:#EBEFF2;
+      }
+}

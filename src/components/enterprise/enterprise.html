@@ -1,0 +1,15 @@
+<div class="ml-2 mt-1 buttonlist">
+    <div class="title back-blue pb-0">
+        <div>
+            <i class="iconfont">&#xe790;</i>
+            <span class="fon-14">{{title}}</span>
+        </div>
+    </div>
+    <ion-list>
+        <ion-item class="back-blue width-100">
+            <ion-select interface="action-sheet" class="width-100" cancelText="取消" [(ngModel)]="date.value" (ngModelChange)="onchangSelect($event)">
+                <ion-option *ngFor="let item of date.list">{{item.Value}}</ion-option>
+            </ion-select>
+        </ion-item>
+    </ion-list>
+</div>

@@ -1,0 +1,63 @@
+<!--
+  Generated template for the ProgressQueryPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>业务进度查询</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="gray">
+  <ion-content>
+
+    <ion-segment [(ngModel)]="pet" style="border-bottom: 2px solid #c8c7cc;">
+      <ion-segment-button [ngClass]="myclass()" class="iconfont" value="个人查档">
+        个人查档
+      </ion-segment-button>
+      <ion-segment-button [ngClass]="myclass1()" class="iconfont" value="机构查档">
+        机构查档
+      </ion-segment-button>
+    </ion-segment>
+    <div [ngSwitch]="pet">
+      <ion-list *ngSwitchCase="'个人查档'">
+        <form [formGroup]="progressqueryForm" autocomplete="off">
+          <ion-item>
+            <ion-label stacked class="ni-1">受理编号</ion-label>
+            <ion-input type="number" placeholder="10-15位数字" formControlName="key"></ion-input>
+          </ion-item>
+          <verification *ngIf="formErrors.key" [text]="formErrors.key"></verification>
+          <ion-item>
+            <ion-label stacked class="ni-1">权利人身份证后四位</ion-label>
+            <ion-input type="text" placeholder="4位数字或者字母" formControlName="personnumber"></ion-input>
+          </ion-item>
+          <verification *ngIf="formErrors.personnumber" [text]="formErrors.personnumber"></verification>
+        </form>
+      </ion-list>
+
+      <ion-list *ngSwitchCase="'机构查档'">
+        <form [formGroup]="progressqueryForm" autocomplete="off">
+          <ion-item>
+            <ion-label stacked class="ni-1">受理编号</ion-label>
+            <ion-input type="number" placeholder="10-15位数字" formControlName="key"></ion-input>
+          </ion-item>
+          <verification *ngIf="formErrors.key" [text]="formErrors.key"></verification>
+          <ion-item>
+            <ion-label stacked class="ni-1">单位名称全称</ion-label>
+            <ion-input type="text" placeholder="请输入单位全称" formControlName="personnumber"></ion-input>
+          </ion-item>
+          <verification *ngIf="formErrors.personnumber" [text]="formErrors.personnumber"></verification>
+        </form>
+      </ion-list>
+
+    </div>
+    <div padding>
+      <button ion-button block color="bule2" [disabled]="!progressqueryForm.valid" (click)="onLoginn()">提交查询</button>
+    </div>
+
+  </ion-content>

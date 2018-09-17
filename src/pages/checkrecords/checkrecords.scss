@@ -1,0 +1,43 @@
+page-checkrecords {
+    .gray p{
+        margin: 0;
+    }
+    .scroll {
+        transform: translate3d(0px, 0px, 0px) scale(1);
+        padding: 0 1rem;
+        margin: 1.8rem 0; 
+    }
+    .scroll .card{
+        background-color: #4a87ee;
+        color: whitesmoke;
+        text-align: center;
+    }
+
+    .listitem{
+        background-color: white;
+        padding: 1rem 1rem;
+        border-bottom: 0.1rem solid #f4f4f4;
+    }
+    .listitem:first-child{
+        border-top: #f4f4f4 .1rem solid;
+    }
+
+    .listitem .flexBox .buttom{
+        background-color: #33CD5F;
+        color: white;
+        padding: .3rem .6rem;
+        border-radius: 1rem;
+    }
+    .listitem .flexBox{
+        justify-content:space-between
+    }
+    .listitem div{
+        padding: .2rem 0; 
+    }
+    .gray .scroll .card p:first-child{
+        padding: .3rem 0;
+    }
+    .gray .scroll .card p:last-child{
+        padding: .6rem 0;
+    }
+}

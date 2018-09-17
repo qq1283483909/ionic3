@@ -1,0 +1,91 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title> 查档服务-机构查档</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content class="gray">
+  <div padding>
+    <ion-segment [(ngModel)]="initString.pet">
+      <ion-segment-button value="{{item.name}}" *ngFor="let item of initString.tabA"  class="dynamic" [ngClass]="{active:initString.pet==item.name}">
+        <div>{{item.name}}</div>
+      </ion-segment-button> 
+    </ion-segment>
+  </div>
+
+  <div [ngSwitch]="initString.pet">
+    <ion-list *ngSwitchCase="initString.gkdcxName" class="show-1">
+      <div class="ml-2 mt-1">
+        <div class="bgfff">
+          <div class="title">
+            <div>
+              <i class="iconfont">&#xe790;</i>
+              <span>证书类型</span>
+            </div>
+          </div>
+          <querytabs index=1 [open]="this.open"></querytabs> 
+        </div>
+      </div>  
+      
+      <!-- 备案企业 -->
+      <div *ngIf="recordCompanies" >
+        <enterprise [date]=recordCompanies></enterprise>
+      </div>
+      
+      <div class="ml-2 mt-1">
+        <button block="" (click)="goPersonArchivalQuery()" color="bule2" class="button-bule disable-hover button button-ios button-default button-default-ios button-block button-block-ios"
+          ion-button="" ng-reflect-block="">
+          <span class="button-inner">
+            {{initString.gkdcxName}}
+          </span>
+          <div class="button-effect"></div>
+        </button>
+      </div>
+      <div class="ml-2 mt-1">
+        <button block="" color="bule2" (click)="queryHistory()" class="button-bule disable-hover button button-ios button-default button-default-ios button-block button-block-ios"
+          ion-button="" ng-reflect-block="">
+          <span class="button-inner">
+            {{initString.cdjlName}}
+          </span>
+          <div class="button-effect"></div>
+        </button>
+      </div>
+    </ion-list>
+
+
+    <ion-list *ngSwitchCase="initString.grdcxName" class="show-2">
+      <div class="ml-2 mt-0 bor-none ionpanll">
+        <div class="title back-1">
+          <div>
+            <i class="iconfont">&#xe790;</i>
+            <span>查询人信息</span>
+          </div>
+        </div>
+        <beforename [formData]="this.infoForm"  [query]=1 ></beforename> 
+      </div>
+       
+      <!-- 备案企业 -->
+      <div *ngIf="recordPersona" >
+        <enterprise [date]=recordPersona></enterprise>
+      </div>
+
+      <div class="ml-2 mt-1 buttonlist">
+        <button block="" color="bule2" class="button-bule disable-hover button button-ios button-default button-default-ios button-block button-block-ios"
+          ion-button="" ng-reflect-block="" (click)="individualPublic()">
+          <span class="button-inner">
+            {{initString.grdcxName}}
+          </span>
+          <div class="button-effect"></div>
+        </button>
+      </div>
+      <div class="ml-2 mt-1 buttonlist">
+        <button block="" color="bule2" (click)="queryHistory()" class="button-bule disable-hover button button-ios button-default button-default-ios button-block button-block-ios"
+          ion-button="" ng-reflect-block="">
+          <span class="button-inner">
+            {{initString.cdjlName}}
+          </span>
+          <div class="button-effect"></div>
+        </button>
+      </div>
+    </ion-list>
+  </div>
+</ion-content>

@@ -1,0 +1,66 @@
+page-floor-information {
+    $browser-default-font-size: 16px !default;
+    @function pxTorem($px) {
+      @return $px / $browser-default-font-size * 1rem;
+      }
+      html {
+        font-size: $browser-default-font-size;
+      }
+    .floor *{
+        margin: 0;
+        padding: 0;
+    }
+    .floor i{
+        vertical-align: middle;
+    }
+    .floor h3{
+        font-size: 1.8rem;
+        margin: 0;
+        padding-top: 1rem;
+        padding-bottom: 1.3rem;
+        text-align: center;
+        background-color:#e4f7fe; 
+        letter-spacing: .1rem;
+    }
+    .floor h2{
+        font-size: 1.8rem;
+        margin: 0;
+        padding: 1.7rem 0 1.7rem 1.6rem;
+    }
+    .floor .item-ios{
+        padding-left: 0;
+    }
+    .floor  .item-ios.item-block .item-inner{
+        padding-right: 0;
+    }
+    .floor .list-ios .item-block .item-inner{
+        border-bottom: 0;
+    }
+    .floor .list-ios > .item-block:first-child{
+        border-top: 0.05rem solid #f2f2f2;
+    }
+    .floor .list .item{
+        padding-left: 2rem;
+        padding-right: 2rem;
+        border-bottom: 0.05rem solid #f2f2f2;
+    }
+    .floor .list .item .row .col p{
+        padding-left: .5rem;
+    }
+    .floor .list .item .row .col p i{
+        font-size: 1.8rem;
+        text-align: right;
+    }
+    .black{
+        color: #000 !important;
+    }
+    .span-style{
+        display: inline-block;
+        width: 1.4rem;
+        border-radius: 50%;
+        text-align: center;
+        margin-left: .5rem;
+        background-color: #ff8202;
+        color: #fff;
+    }
+}
